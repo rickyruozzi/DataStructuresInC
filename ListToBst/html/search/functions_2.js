@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../_list_to_bst_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'ListToBst.c']]]
+  ['generatebst_0',['GenerateBst',['../_list_to_bst_8c.html#a85a23b7ea4ca6bf4d083d795b9befbd1',1,'ListToBst.c']]]
 ];

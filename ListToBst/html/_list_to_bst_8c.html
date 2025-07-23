@@ -91,20 +91,60 @@ $(function(){initNavTree('_list_to_bst_8c.html','',''); });
   <div class="headertitle"><div class="title">ListToBst.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_list_to_bst_8h_source.html">ListToBst.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_list_to_bst_8h_source.html">ListToBst.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a41c9722acf82e3ff58a1e40ae9f55e9b" id="r_a41c9722acf82e3ff58a1e40ae9f55e9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41c9722acf82e3ff58a1e40ae9f55e9b">addTail</a> (<a class="el" href="struct_list_node.html">ListNode</a> *head, int value)</td></tr>
-<tr class="memdesc:a41c9722acf82e3ff58a1e40ae9f55e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">aggiunge un nodod in coda  <br /></td></tr>
+<tr class="memdesc:a41c9722acf82e3ff58a1e40ae9f55e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiunge un nodo in coda alla lista.  <br /></td></tr>
 <tr class="memitem:a3fa3ed808abcc03a73ebf819cdb6399b" id="r_a3fa3ed808abcc03a73ebf819cdb6399b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fa3ed808abcc03a73ebf819cdb6399b">printList</a> (<a class="el" href="struct_list_node.html">ListNode</a> *head)</td></tr>
 <tr class="memdesc:a3fa3ed808abcc03a73ebf819cdb6399b"><td class="mdescLeft">&#160;</td><td class="mdescRight">stampa la lista  <br /></td></tr>
 <tr class="memitem:a760efdb508f7164a660d6587b011895a" id="r_a760efdb508f7164a660d6587b011895a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_list_node.html">ListNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a760efdb508f7164a660d6587b011895a">readList</a> ()</td></tr>
-<tr class="memdesc:a760efdb508f7164a660d6587b011895a"><td class="mdescLeft">&#160;</td><td class="mdescRight">creiamo una lista con i nostri valori  <br /></td></tr>
+<tr class="memdesc:a760efdb508f7164a660d6587b011895a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea la lista leggendola da file.  <br /></td></tr>
+<tr class="memitem:a1e28dc1203dbc0394b7939d4f9983305" id="r_a1e28dc1203dbc0394b7939d4f9983305"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e28dc1203dbc0394b7939d4f9983305">addBstNode</a> (<a class="el" href="struct_bst_node.html">BstNode</a> *root, int data)</td></tr>
+<tr class="memdesc:a1e28dc1203dbc0394b7939d4f9983305"><td class="mdescLeft">&#160;</td><td class="mdescRight">aggiunge un nodo al BST  <br /></td></tr>
+<tr class="memitem:a85a23b7ea4ca6bf4d083d795b9befbd1" id="r_a85a23b7ea4ca6bf4d083d795b9befbd1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_bst_node.html">BstNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85a23b7ea4ca6bf4d083d795b9befbd1">GenerateBst</a> (<a class="el" href="struct_list_node.html">ListNode</a> *head)</td></tr>
+<tr class="memdesc:a85a23b7ea4ca6bf4d083d795b9befbd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">crea il BST  <br /></td></tr>
+<tr class="memitem:ae2b6798471b2af7347298cdd2b064ded" id="r_ae2b6798471b2af7347298cdd2b064ded"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2b6798471b2af7347298cdd2b064ded">freeList</a> (<a class="el" href="struct_list_node.html">ListNode</a> *head)</td></tr>
+<tr class="memdesc:ae2b6798471b2af7347298cdd2b064ded"><td class="mdescLeft">&#160;</td><td class="mdescRight">libera la memoria della lista  <br /></td></tr>
+<tr class="memitem:a232250ea169aab55a2a36bb8ddc73364" id="r_a232250ea169aab55a2a36bb8ddc73364"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a232250ea169aab55a2a36bb8ddc73364">freeBst</a> (<a class="el" href="struct_bst_node.html">BstNode</a> *root)</td></tr>
+<tr class="memdesc:a232250ea169aab55a2a36bb8ddc73364"><td class="mdescLeft">&#160;</td><td class="mdescRight">libera la memoria del BST  <br /></td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a1e28dc1203dbc0394b7939d4f9983305" name="a1e28dc1203dbc0394b7939d4f9983305"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e28dc1203dbc0394b7939d4f9983305">&#9670;&#160;</a></span>addBstNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addBstNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_bst_node.html">BstNode</a> *</td>          <td class="paramname"><span class="paramname"><em>root</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>aggiunge un nodo al BST </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">root</td><td></td></tr>
+    <tr><td class="paramname">data</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a41c9722acf82e3ff58a1e40ae9f55e9b" name="a41c9722acf82e3ff58a1e40ae9f55e9b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a41c9722acf82e3ff58a1e40ae9f55e9b">&#9670;&#160;</a></span>addTail()</h2>
 
@@ -124,7 +164,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>aggiunge un nodod in coda </p>
+<p>Aggiunge un nodo in coda alla lista. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">head</td><td></td></tr>
@@ -132,6 +172,82 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a232250ea169aab55a2a36bb8ddc73364" name="a232250ea169aab55a2a36bb8ddc73364"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a232250ea169aab55a2a36bb8ddc73364">&#9670;&#160;</a></span>freeBst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void freeBst </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_bst_node.html">BstNode</a> *</td>          <td class="paramname"><span class="paramname"><em>root</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>libera la memoria del BST </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">root</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae2b6798471b2af7347298cdd2b064ded" name="ae2b6798471b2af7347298cdd2b064ded"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2b6798471b2af7347298cdd2b064ded">&#9670;&#160;</a></span>freeList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void freeList </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_list_node.html">ListNode</a> *</td>          <td class="paramname"><span class="paramname"><em>head</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>libera la memoria della lista </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a85a23b7ea4ca6bf4d083d795b9befbd1" name="a85a23b7ea4ca6bf4d083d795b9befbd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85a23b7ea4ca6bf4d083d795b9befbd1">&#9670;&#160;</a></span>GenerateBst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_bst_node.html">BstNode</a> * GenerateBst </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_list_node.html">ListNode</a> *</td>          <td class="paramname"><span class="paramname"><em>head</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>crea il BST </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>BstNode* </dd></dl>
 
 </div>
 </div>
@@ -151,7 +267,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Main. </p>
-<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
 </div>
 </div>
@@ -195,7 +310,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>creiamo una lista con i nostri valori </p>
+<p>Crea la lista leggendola da file. </p>
 <dl class="section return"><dt>Returns</dt><dd>ListNode* </dd></dl>
 
 </div>

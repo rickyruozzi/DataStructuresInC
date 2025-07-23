@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readlist_0',['readList',['../_list_to_bst_8c.html#a760efdb508f7164a660d6587b011895a',1,'readList():&#160;ListToBst.c'],['../_list_to_bst_8h.html#a760efdb508f7164a660d6587b011895a',1,'readList():&#160;ListToBst.c']]]
+  ['main_0',['main',['../_list_to_bst_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'ListToBst.c']]]
 ];
