@@ -57,6 +57,18 @@ ListNode* readList(){
     fclose(f);
     return head;
 }
+
+BstNode* GenerateBst(ListNode* head){
+    BstNode* root = (BstNode*)malloc(sizeof(BstNode));
+    root->data=head->data;
+    root->left=NULL;
+    root->right=NULL;
+    while(head->next!=NULL){
+        addBstNode(root,head->data);
+    }
+    return root;
+}
+
 /**
  * @brief Main
  * 
@@ -65,4 +77,5 @@ ListNode* readList(){
 int main(){
     ListNode* head= readList();
     printList(head);
+    BstNode* BST = GenerateBst(head);
 }
