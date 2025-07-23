@@ -59,7 +59,28 @@ ListNode* readList(){
 }
 
 void addBstNode(BstNode* root, int data){
-    if(root->){}
+    if(data>root->data && root->right==NULL){
+        BstNode* nodoBST=(BstNode*)malloc(sizeof(BstNode));
+        nodoBST->data=data;
+        nodoBST->left=NULL;
+        nodoBST->right=NULL;
+        root->right=nodoBST;
+        return;
+    }
+    if(data<root->data && root->left==NULL){
+        BstNode* nodoBST=(BstNode*)malloc(sizeof(BstNode));
+        nodoBST->data=data;
+        nodoBST->left=NULL;
+        nodoBST->right=NULL;
+        root->left=nodoBST;
+        return;
+    }
+    if(data>root->data){
+        addBstNode(root->right,data);
+    }
+    if(data<root->data){
+        addBstNode(root->left,data);
+    }
 }
 
  /**
