@@ -1,21 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "ListToBst.h"
+
 /**
- * @brief aggiunge un nodod in coda
- *
+ * @brief Aggiunge un nodo in coda alla lista
  * 
  * @param head 
  * @param value 
  */
 void addTail(ListNode* head, int value){
+    if (head == NULL) return;
     ListNode* newNode = (ListNode*)malloc(sizeof(ListNode));
     ListNode* current = head;
     while(current->next != NULL){
-        current=current->next;
+        current = current->next;
     }
-    newNode->data=value;
-    newNode->next=NULL;
-    current->next=newNode;
+    newNode->data = value;
+    newNode->next = NULL;
+    current->next = newNode;
 }
+
 /**
  * @brief stampa la lista
  * 
@@ -23,92 +27,143 @@ void addTail(ListNode* head, int value){
  */
 void printList(ListNode* head){
     ListNode* current = head;
-    while(current!=NULL){
-        printf("%d ",current->data);
-        current=current->next;
+    while(current != NULL){
+        printf("%d ", current->data);
+        current = current->next;
     } 
+    printf("\n");
 }
+
 /**
- * @brief creiamo una lista con i nostri valori
+ * @brief Crea la lista leggendola da file
  * 
  * @return ListNode* 
  */
 ListNode* readList(){
-    FILE* f=fopen("list.txt", "r");
-    if(f==NULL){
-        printf("Error opening file");
+    FILE* f = fopen("list.txt", "r");
+    if(f == NULL){
+        printf("Error opening file\n");
         return NULL;
     }
+
     int c = fgetc(f);
     if (c == EOF) {
+        fclose(f);
         return NULL;
     }
     ungetc(c, f);
-    ListNode* head=(ListNode*)malloc(sizeof(ListNode));
-    int n;
+
     char s[256];
-    fgets(s,sizeof(s),f);
-    n=atoi(s);
-    head->data=n;
-    head->next=NULL;
-    while(fgets(s,sizeof(s),f)){
+    if (fgets(s, sizeof(s), f) == NULL) {
+        fclose(f);
+        return NULL;
+    }
+
+    int n = atoi(s);
+    ListNode* head = (ListNode*)malloc(sizeof(ListNode));
+    head->data = n;
+    head->next = NULL;
+
+    while(fgets(s, sizeof(s), f)){
         addTail(head, atoi(s));
     }
+
     fclose(f);
     return head;
 }
 
+/**
+ * @brief aggiunge un nodo al BST
+ * 
+ * @param root
+ * 
+ * @param data
+ */
 void addBstNode(BstNode* root, int data){
-    if(data>root->data && root->right==NULL){
-        BstNode* nodoBST=(BstNode*)malloc(sizeof(BstNode));
-        nodoBST->data=data;
-        nodoBST->left=NULL;
-        nodoBST->right=NULL;
-        root->right=nodoBST;
+    if(data > root->data && root->right == NULL){
+        BstNode* nodoBST = (BstNode*)malloc(sizeof(BstNode));
+        nodoBST->data = data;
+        nodoBST->left = NULL;
+        nodoBST->right = NULL;
+        root->right = nodoBST;
         return;
     }
-    if(data<root->data && root->left==NULL){
-        BstNode* nodoBST=(BstNode*)malloc(sizeof(BstNode));
-        nodoBST->data=data;
-        nodoBST->left=NULL;
-        nodoBST->right=NULL;
-        root->left=nodoBST;
+    if(data < root->data && root->left == NULL){
+        BstNode* nodoBST = (BstNode*)malloc(sizeof(BstNode));
+        nodoBST->data = data;
+        nodoBST->left = NULL;
+        nodoBST->right = NULL;
+        root->left = nodoBST;
         return;
     }
-    if(data>root->data){
-        addBstNode(root->right,data);
+    if(data > root->data){
+        addBstNode(root->right, data);
     }
-    if(data<root->data){
-        addBstNode(root->left,data);
+    if(data < root->data){
+        addBstNode(root->left, data);
     }
 }
 
- /**
-  * @brief Genera il Bst
-  * 
-  * @param head 
-  * @return BstNode* 
-  */
+/**
+ * @brief crea il BST
+ * 
+ * @param head 
+ * @return BstNode* 
+ */
 BstNode* GenerateBst(ListNode* head){
+    if (head == NULL) return NULL;
     BstNode* root = (BstNode*)malloc(sizeof(BstNode));
-    root->data=head->data;
-    root->left=NULL;
-    root->right=NULL;
-    head=head->next;
-    while(head->next!=NULL){
-        addBstNode(root,head->data);
-        head=head->next;
+    root->data = head->data;
+    root->left = NULL;
+    root->right = NULL;
+    head = head->next;
+
+    while (head != NULL) {
+        addBstNode(root, head->data);
+        head = head->next;
     }
+
     return root;
 }
 
 /**
- * @brief Main
+ * @brief libera la memoria della lista
  * 
- * @return int 
+ * @param head
+ */
+void freeList(ListNode* head){
+    while (head != NULL){
+        ListNode* tmp = head;
+        head = head->next;
+        free(tmp);
+    }
+}
+
+/**
+ * @brief libera la memoria del BST
+ * 
+ * @param root
+ */
+void freeBst(BstNode* root){
+    if (root == NULL) return;
+    freeBst(root->left);
+    freeBst(root->right);
+    free(root);
+}
+
+/**
+ * @brief Main
  */
 int main(){
-    ListNode* head= readList();
+    ListNode* head = readList();
+    if (head == NULL) return 1;
+
     printList(head);
     BstNode* BST = GenerateBst(head);
+
+    // Libera la memoria
+    freeList(head);
+    freeBst(BST);
+
+    return 0;
 }
