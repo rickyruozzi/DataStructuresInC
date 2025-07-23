@@ -58,13 +58,25 @@ ListNode* readList(){
     return head;
 }
 
+void addBstNode(BstNode* root, int data){
+    if(root->){}
+}
+
+ /**
+  * @brief Genera il Bst
+  * 
+  * @param head 
+  * @return BstNode* 
+  */
 BstNode* GenerateBst(ListNode* head){
     BstNode* root = (BstNode*)malloc(sizeof(BstNode));
     root->data=head->data;
     root->left=NULL;
     root->right=NULL;
+    head=head->next;
     while(head->next!=NULL){
         addBstNode(root,head->data);
+        head=head->next;
     }
     return root;
 }
