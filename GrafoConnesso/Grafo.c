@@ -1,5 +1,10 @@
 #include "./Grafo.h"
-
+/**
+ * @brief Create a Graph object
+ * 
+ * @param vertici 
+ * @return grafo* 
+ */
 grafo* createGraph(int vertici){
     grafo* g = (grafo*)malloc(sizeof(grafo));
     g->vertici = vertici;   
@@ -10,6 +15,13 @@ grafo* createGraph(int vertici){
     return g;
 }
 
+/**
+ * @brief Create a Node object
+ * 
+ * @param dest 
+ * @param peso 
+ * @return Nodo* 
+ */
 Nodo* createNode(int dest, int peso){
     Nodo* newNodo = (Nodo*)malloc(sizeof(Nodo));
     newNodo->vertex=dest;
@@ -18,6 +30,14 @@ Nodo* createNode(int dest, int peso){
     return newNodo;
 }
 
+/**
+ * @brief add an edge
+ * 
+ * @param g 
+ * @param src 
+ * @param dest 
+ * @param peso 
+ */
 void addEdge(grafo* g, int src, int dest, int peso){
     if (src < 0 || src >= g->vertici) {
     fprintf(stderr, "Errore: indice src fuori range\n");
@@ -35,6 +55,13 @@ void addEdge(grafo* g, int src, int dest, int peso){
     testa->next=newNodo;
 }
 
+/**
+ * @brief load the graph from a file
+ * 
+ * @param filename 
+ * @param isDirected 
+ * @return grafo* 
+ */
 grafo* loadGraphFromFile(const char* filename, int isDirected){
     FILE* file = fopen(filename, "r");
     if (!file){
@@ -61,6 +88,11 @@ grafo* loadGraphFromFile(const char* filename, int isDirected){
     return g;
 }
 
+/**
+ * @brief print a graph
+ * 
+ * @param g 
+ */
 void printGraph(grafo* g){
     for(int i=0; i<g->vertici; i++){
         Nodo* testa=g->adjacency_list[i];        while(testa!=NULL){
@@ -70,6 +102,11 @@ void printGraph(grafo* g){
     }
 }
 
+/**
+ * @brief free the allocated space for the graph
+ * 
+ * @param g 
+ */
 void freeGraph(grafo* g){
     for(int i=0; i<g->vertici; i++){
         Nodo* testa = g->adjacency_list[i];
@@ -83,6 +120,15 @@ void freeGraph(grafo* g){
     free(g);
 }
 
+/**
+ * @brief verify an edge existence
+ * 
+ * @param g 
+ * @param src 
+ * @param dest 
+ * @return true 
+ * @return false 
+ */
 bool edgeExist(grafo* g, int src, int dest){
     Nodo* testa=g->adjacency_list[src];
     while(testa!=NULL){
@@ -94,6 +140,14 @@ bool edgeExist(grafo* g, int src, int dest){
     return false;
 }
 
+/**
+ * @brief find an edge weight
+ * 
+ * @param g 
+ * @param src 
+ * @param dest 
+ * @return int 
+ */
 int weight(grafo* g, int src, int dest){
     Nodo* testa=g->adjacency_list[src];
     while(testa!=NULL){
@@ -105,6 +159,13 @@ int weight(grafo* g, int src, int dest){
     return -1;
 }
 
+/**
+ * @brief check if the graph is undirected
+ * 
+ * @param g 
+ * @return true 
+ * @return false 
+ */
 bool isUndirected(grafo* g){
     for(int i=0; i<g->vertici; i++){
         Nodo* testa=g->adjacency_list[i];        
@@ -118,6 +179,13 @@ bool isUndirected(grafo* g){
     return true;
 }
 
+/**
+ * @brief check if the graph is directed
+ * 
+ * @param g 
+ * @return true 
+ * @return false 
+ */
 bool isDirected(grafo* g){
     if(!isUndirected(g)) return true;
     return false;
