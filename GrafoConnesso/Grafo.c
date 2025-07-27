@@ -124,7 +124,14 @@ bool isDirected(grafo* g){
 }
 
 int main(){
-    grafo* Grafo = loadGraphFromFile("Grafo.txt", false);
+    grafo* Grafo = loadGraphFromFile("Grafo.txt", true);
     printGraph(Grafo);
     freeGraph(Grafo);
+    if(isUndirected(Grafo)){
+        printf("Grafo non diretto");
+    }
+    else{
+        printf("Grafo diretto");
+    }
+    return 0;
 }
