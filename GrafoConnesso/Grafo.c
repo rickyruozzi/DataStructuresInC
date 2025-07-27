@@ -19,6 +19,10 @@ Nodo* createNode(int dest, int peso){
 }
 
 void addEdge(grafo* g, int src, int dest, int peso){
+    if (src < 0 || src >= g->vertici) {
+    fprintf(stderr, "Errore: indice src fuori range\n");
+    return;
+    }
     Nodo* newNodo = createNode(dest, peso);
     Nodo* testa = g->adjacency_list[src];
     if(testa==NULL){
@@ -119,4 +123,8 @@ bool isDirected(grafo* g){
     return false;
 }
 
-int main(){}
+int main(){
+    grafo* Grafo = loadGraphFromFile("Grafo.txt", false);
+    printGraph(Grafo);
+    freeGraph(Grafo);
+}

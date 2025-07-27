@@ -115,6 +115,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a2138981cad6557ec4d5979a9ae583432" id="r_a2138981cad6557ec4d5979a9ae583432"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2138981cad6557ec4d5979a9ae583432">addEdge</a> (<a class="el" href="structgrafo.html">grafo</a> *g, int src, int dest, int peso)</td></tr>
 <tr class="memitem:aa65cfb921a2cd7babec80dcebbedcbec" id="r_aa65cfb921a2cd7babec80dcebbedcbec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa65cfb921a2cd7babec80dcebbedcbec">printGraph</a> (<a class="el" href="structgrafo.html">grafo</a> *g)</td></tr>
 <tr class="memitem:a6ea4d3fd612fad73260e26b99afccc38" id="r_a6ea4d3fd612fad73260e26b99afccc38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ea4d3fd612fad73260e26b99afccc38">freeGraph</a> (<a class="el" href="structgrafo.html">grafo</a> *graph)</td></tr>
+<tr class="memitem:aceb87bfe0234c098aa2d00c07defb82f" id="r_aceb87bfe0234c098aa2d00c07defb82f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aceb87bfe0234c098aa2d00c07defb82f">edgeExist</a> (<a class="el" href="structgrafo.html">grafo</a> *g, int src, int dest)</td></tr>
+<tr class="memitem:ae64d41e7267bd66abd77bf7fb105b2a2" id="r_ae64d41e7267bd66abd77bf7fb105b2a2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae64d41e7267bd66abd77bf7fb105b2a2">weight</a> (<a class="el" href="structgrafo.html">grafo</a> *g, int src, int dest)</td></tr>
+<tr class="memitem:ae79741145ab0d848092f932eb0bc0b03" id="r_ae79741145ab0d848092f932eb0bc0b03"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae79741145ab0d848092f932eb0bc0b03">isUndirected</a> (<a class="el" href="structgrafo.html">grafo</a> *g)</td></tr>
+<tr class="memitem:a05e3085f070fd00422e6135fb37239a4" id="r_a05e3085f070fd00422e6135fb37239a4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05e3085f070fd00422e6135fb37239a4">isDirected</a> (<a class="el" href="structgrafo.html">grafo</a> *g)</td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
 <a id="ada2456d26003912a176eb897662c41a8" name="ada2456d26003912a176eb897662c41a8"></a>
@@ -215,6 +219,32 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aceb87bfe0234c098aa2d00c07defb82f" name="aceb87bfe0234c098aa2d00c07defb82f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceb87bfe0234c098aa2d00c07defb82f">&#9670;&#160;</a></span>edgeExist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool edgeExist </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrafo.html">grafo</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a6ea4d3fd612fad73260e26b99afccc38" name="a6ea4d3fd612fad73260e26b99afccc38"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6ea4d3fd612fad73260e26b99afccc38">&#9670;&#160;</a></span>freeGraph()</h2>
 
@@ -225,6 +255,40 @@ Functions</h2></td></tr>
           <td class="memname">void freeGraph </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structgrafo.html">grafo</a> *</td>          <td class="paramname"><span class="paramname"><em>graph</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a05e3085f070fd00422e6135fb37239a4" name="a05e3085f070fd00422e6135fb37239a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05e3085f070fd00422e6135fb37239a4">&#9670;&#160;</a></span>isDirected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isDirected </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrafo.html">grafo</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae79741145ab0d848092f932eb0bc0b03" name="ae79741145ab0d848092f932eb0bc0b03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae79741145ab0d848092f932eb0bc0b03">&#9670;&#160;</a></span>isUndirected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isUndirected </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrafo.html">grafo</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -264,6 +328,32 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structgrafo.html">grafo</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae64d41e7267bd66abd77bf7fb105b2a2" name="ae64d41e7267bd66abd77bf7fb105b2a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae64d41e7267bd66abd77bf7fb105b2a2">&#9670;&#160;</a></span>weight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int weight </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrafo.html">grafo</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
