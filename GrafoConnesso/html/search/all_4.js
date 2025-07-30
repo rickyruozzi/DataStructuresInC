@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['grafo_0',['grafo',['../structgrafo.html',1,'grafo'],['../_grafo_8h.html#ada2456d26003912a176eb897662c41a8',1,'grafo:&#160;Grafo.h']]],
-  ['grafo_2ec_1',['Grafo.c',['../_grafo_8c.html',1,'']]],
-  ['grafo_2eh_2',['Grafo.h',['../_grafo_8h.html',1,'']]]
+  ['freegraph_0',['freeGraph',['../_grafo_8c.html#a5109df4375d8aa5d7497c84011f9b28c',1,'freeGraph(grafo *g):&#160;Grafo.c'],['../_grafo_8h.html#a6ea4d3fd612fad73260e26b99afccc38',1,'freeGraph(grafo *graph):&#160;Grafo.c']]]
 ];

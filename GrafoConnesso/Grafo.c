@@ -191,6 +191,70 @@ bool isDirected(grafo* g){
     return false;
 }
 
+/**
+ * @brief trova il nodo con distanza minima non visitato (così garantamo la logica greedy)
+ * 
+ * @note sostituibile con un algoritmo che si basi sulla coda con priorità
+ * 
+ * @param visitato 
+ * @param dist 
+ * @param V 
+ * @return int 
+ */
+int trova_minimo(bool visitato[], int dist[], int V ){
+    int min = INT_MAX;
+    int min_index = -1;
+
+    for(int i=0; i<V; i++){
+        if(!visitato[i] && dist[i] < min){
+            min = dist[i];
+            min_index=i;
+        }
+    }
+    return min_index;
+}
+
+/**
+ * @brief calcola le distanza minime
+ * 
+ * @param src 
+ * @param dist 
+ * @param prev 
+ * @param Grafo 
+ * @return int* 
+ * 
+ * @note l'array delle visite serve per evitare eventuali cicli
+ * @note trova_minimo serve per trovare il vertice più vicino a quelli già visitati (permette di attuare la logica greedy)
+ */
+void Djikstra(int src, int* dist, int* prev, grafo* Grafo){
+    //inizializzazione
+    int vertici= Grafo->vertici;
+    bool* visitati = (bool*)malloc(vertici*sizeof(bool));
+    for(int i=0; i<vertici;i++){
+        visitati[i]=false;
+        dist[i]=INT_MAX;
+        prev[i]=-1;
+    }
+    dist[src]=0;
+
+    //calcolo delle distanza minime e dei cammini
+    for(int j=0; j<vertici-1; j++){
+        int u=trova_minimo(visitati, dist, vertici);
+        if (u==-1){return;} //se non troviamo nodi non visitati raggiungibili allora non possiamo continuare con l'algoritmo
+        visitati[u]=true;
+        Nodo* current=Grafo->adjacency_list[u]; //testa della lista di adiacenza del nodo u
+        while (current!=NULL){
+            int v=current->vertex;
+            int peso = current->peso;
+            if(!visitati[v] && dist[u]!=INT_MAX && dist[v]>dist[u]+peso){
+                dist[v]=dist[u]+peso;
+                prev[v]=u;
+            }
+            current=current->next;
+        }
+    }
+}
+
 int main(){
     grafo* Grafo = loadGraphFromFile("Grafo.txt", true);
     printGraph(Grafo);

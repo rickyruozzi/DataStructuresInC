@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../_grafo_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'Grafo.c']]]
+  ['loadgraphfromfile_0',['loadGraphFromFile',['../_grafo_8c.html#a0248b32a89809f585a30a4825038fa2e',1,'loadGraphFromFile(const char *filename, int isDirected):&#160;Grafo.c'],['../_grafo_8h.html#a0248b32a89809f585a30a4825038fa2e',1,'loadGraphFromFile(const char *filename, int isDirected):&#160;Grafo.c']]]
 ];

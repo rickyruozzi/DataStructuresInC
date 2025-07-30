@@ -23,5 +23,6 @@ bool edgeExist(grafo* g, int src, int dest);
 int weight(grafo* g, int src, int dest);
 bool isUndirected(grafo* g);
 bool isDirected(grafo* g);
+int* Djikstra(int src, int* dist, int* prev, grafo* Grafo);
 
 #endif

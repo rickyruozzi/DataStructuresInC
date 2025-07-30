@@ -7,6 +7,7 @@ var _grafo_8h =
     [ "addEdge", "_grafo_8h.html#a2138981cad6557ec4d5979a9ae583432", null ],
     [ "createGraph", "_grafo_8h.html#ad6257a631e107864c53961f136f918dc", null ],
     [ "createNode", "_grafo_8h.html#a0a8059723bbd729dc2aea8709b995c10", null ],
+    [ "Djikstra", "_grafo_8h.html#a2bbf262ec7270e66198c530ba17ec5d8", null ],
     [ "edgeExist", "_grafo_8h.html#aceb87bfe0234c098aa2d00c07defb82f", null ],
     [ "freeGraph", "_grafo_8h.html#a6ea4d3fd612fad73260e26b99afccc38", null ],
     [ "isDirected", "_grafo_8h.html#a05e3085f070fd00422e6135fb37239a4", null ],

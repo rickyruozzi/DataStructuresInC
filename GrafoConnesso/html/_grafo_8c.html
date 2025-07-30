@@ -115,6 +115,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ae79741145ab0d848092f932eb0bc0b03"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if the graph is undirected  <br /></td></tr>
 <tr class="memitem:a05e3085f070fd00422e6135fb37239a4" id="r_a05e3085f070fd00422e6135fb37239a4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05e3085f070fd00422e6135fb37239a4">isDirected</a> (<a class="el" href="structgrafo.html">grafo</a> *g)</td></tr>
 <tr class="memdesc:a05e3085f070fd00422e6135fb37239a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if the graph is directed  <br /></td></tr>
+<tr class="memitem:aa61b9567194531e98bea7215d5c6f9c3" id="r_aa61b9567194531e98bea7215d5c6f9c3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa61b9567194531e98bea7215d5c6f9c3">trova_minimo</a> (bool visitato[], int dist[], int V)</td></tr>
+<tr class="memdesc:aa61b9567194531e98bea7215d5c6f9c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">trova il nodo con distanza minima non visitato (così garantamo la logica greedy)  <br /></td></tr>
+<tr class="memitem:a07ef683139a9549302ade1f8fc85d4b1" id="r_a07ef683139a9549302ade1f8fc85d4b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07ef683139a9549302ade1f8fc85d4b1">Djikstra</a> (int src, int *dist, int *prev, <a class="el" href="structgrafo.html">grafo</a> *Grafo)</td></tr>
+<tr class="memdesc:a07ef683139a9549302ade1f8fc85d4b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">calcola le distanza minime  <br /></td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
@@ -214,6 +218,52 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Nodo* </dd></dl>
+
+</div>
+</div>
+<a id="a07ef683139a9549302ade1f8fc85d4b1" name="a07ef683139a9549302ade1f8fc85d4b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07ef683139a9549302ade1f8fc85d4b1">&#9670;&#160;</a></span>Djikstra()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Djikstra </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>dist</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>prev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgrafo.html">grafo</a> *</td>          <td class="paramname"><span class="paramname"><em>Grafo</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>calcola le distanza minime </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td></td></tr>
+    <tr><td class="paramname">dist</td><td></td></tr>
+    <tr><td class="paramname">prev</td><td></td></tr>
+    <tr><td class="paramname">Grafo</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int*</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>l'array delle visite serve per evitare eventuali cicli </dd>
+<dd>
+trova_minimo serve per trovare il vertice più vicino a quelli già visitati (permette di attuare la logica greedy) </dd></dl>
 
 </div>
 </div>
@@ -407,6 +457,44 @@ false </dd></dl>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aa61b9567194531e98bea7215d5c6f9c3" name="aa61b9567194531e98bea7215d5c6f9c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa61b9567194531e98bea7215d5c6f9c3">&#9670;&#160;</a></span>trova_minimo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int trova_minimo </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>visitato</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>dist</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>V</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>trova il nodo con distanza minima non visitato (così garantamo la logica greedy) </p>
+<dl class="section note"><dt>Note</dt><dd>sostituibile con un algoritmo che si basi sulla coda con priorità</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">visitato</td><td></td></tr>
+    <tr><td class="paramname">dist</td><td></td></tr>
+    <tr><td class="paramname">V</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
 </div>
 </div>
