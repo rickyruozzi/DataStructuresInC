@@ -10,5 +10,8 @@ typedef struct Graph{
 }Graph;
 void initGraph(Graph *G, int numVertici);
 void addEdge(Graph* G, int v1, int v2, int peso, bool isDirected);
+void printMatrix(Graph* G, int numVertici);
+int trovaGrado(Graph* G, int numVertici, int nodo);
+void stampaGradi(Graph* G, int numVertici);
 void ReadGraph(Graph* G, const char *Filename, bool isDirected);
 #endif

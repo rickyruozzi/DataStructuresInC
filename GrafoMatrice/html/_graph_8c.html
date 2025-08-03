@@ -96,8 +96,17 @@ $(function(){initNavTree('_graph_8c.html','',''); });
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae8d24e15f504393ea7b46c8d451aa2c4" id="r_ae8d24e15f504393ea7b46c8d451aa2c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8d24e15f504393ea7b46c8d451aa2c4">initGraph</a> (<a class="el" href="struct_graph.html">Graph</a> *G, int numVertici)</td></tr>
+<tr class="memdesc:ae8d24e15f504393ea7b46c8d451aa2c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">inizializza il nostro grafo  <br /></td></tr>
 <tr class="memitem:a30a974ef5c65e858c4e43d293bd91b1d" id="r_a30a974ef5c65e858c4e43d293bd91b1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30a974ef5c65e858c4e43d293bd91b1d">addEdge</a> (<a class="el" href="struct_graph.html">Graph</a> *G, int v1, int v2, int peso, bool isDirected)</td></tr>
+<tr class="memdesc:a30a974ef5c65e858c4e43d293bd91b1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">aggiunge un arco  <br /></td></tr>
+<tr class="memitem:a010629b220f1d28c44b86d31e8ad9e80" id="r_a010629b220f1d28c44b86d31e8ad9e80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a010629b220f1d28c44b86d31e8ad9e80">printMatrix</a> (<a class="el" href="struct_graph.html">Graph</a> *G, int numVertici)</td></tr>
+<tr class="memdesc:a010629b220f1d28c44b86d31e8ad9e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">stampa la matrice delle adiacenze  <br /></td></tr>
+<tr class="memitem:ae4b83b99975ac5180d6b63ea023517ed" id="r_ae4b83b99975ac5180d6b63ea023517ed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4b83b99975ac5180d6b63ea023517ed">trovaGrado</a> (<a class="el" href="struct_graph.html">Graph</a> *G, int numVertici, int nodo)</td></tr>
+<tr class="memdesc:ae4b83b99975ac5180d6b63ea023517ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">trova il grado di un nodo  <br /></td></tr>
+<tr class="memitem:a656cf023092e4e9eaa878d0be11d5d32" id="r_a656cf023092e4e9eaa878d0be11d5d32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a656cf023092e4e9eaa878d0be11d5d32">stampaGradi</a> (<a class="el" href="struct_graph.html">Graph</a> *G, int numVertici)</td></tr>
+<tr class="memdesc:a656cf023092e4e9eaa878d0be11d5d32"><td class="mdescLeft">&#160;</td><td class="mdescRight">stampa i gradi dei nodi  <br /></td></tr>
 <tr class="memitem:a08024be9441b8be3ff2d6b22bb1e0f38" id="r_a08024be9441b8be3ff2d6b22bb1e0f38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08024be9441b8be3ff2d6b22bb1e0f38">ReadGraph</a> (<a class="el" href="struct_graph.html">Graph</a> *G, const char *Filename, bool isDirected)</td></tr>
+<tr class="memdesc:a08024be9441b8be3ff2d6b22bb1e0f38"><td class="mdescLeft">&#160;</td><td class="mdescRight">legge i dati di un grafo dal file e aggiorna i grafo  <br /></td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
@@ -135,6 +144,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>aggiunge un arco </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td></td></tr>
+    <tr><td class="paramname">v1</td><td></td></tr>
+    <tr><td class="paramname">v2</td><td></td></tr>
+    <tr><td class="paramname">peso</td><td></td></tr>
+    <tr><td class="paramname">isDirected</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ae8d24e15f504393ea7b46c8d451aa2c4" name="ae8d24e15f504393ea7b46c8d451aa2c4"></a>
@@ -156,6 +177,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>inizializza il nostro grafo </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td></td></tr>
+    <tr><td class="paramname">numVertici</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
@@ -172,6 +202,36 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a010629b220f1d28c44b86d31e8ad9e80" name="a010629b220f1d28c44b86d31e8ad9e80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a010629b220f1d28c44b86d31e8ad9e80">&#9670;&#160;</a></span>printMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graph.html">Graph</a> *</td>          <td class="paramname"><span class="paramname"><em>G</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>numVertici</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stampa la matrice delle adiacenze </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td></td></tr>
+    <tr><td class="paramname">numVertici</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -198,6 +258,83 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>legge i dati di un grafo dal file e aggiorna i grafo </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td></td></tr>
+    <tr><td class="paramname">Filename</td><td></td></tr>
+    <tr><td class="paramname">isDirected</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a656cf023092e4e9eaa878d0be11d5d32" name="a656cf023092e4e9eaa878d0be11d5d32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a656cf023092e4e9eaa878d0be11d5d32">&#9670;&#160;</a></span>stampaGradi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stampaGradi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graph.html">Graph</a> *</td>          <td class="paramname"><span class="paramname"><em>G</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>numVertici</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stampa i gradi dei nodi </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td></td></tr>
+    <tr><td class="paramname">numVertici</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae4b83b99975ac5180d6b63ea023517ed" name="ae4b83b99975ac5180d6b63ea023517ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4b83b99975ac5180d6b63ea023517ed">&#9670;&#160;</a></span>trovaGrado()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int trovaGrado </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graph.html">Graph</a> *</td>          <td class="paramname"><span class="paramname"><em>G</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>numVertici</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nodo</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>trova il grado di un nodo </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td></td></tr>
+    <tr><td class="paramname">numVertici</td><td></td></tr>
+    <tr><td class="paramname">nodo</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
 </div>
 </div>
