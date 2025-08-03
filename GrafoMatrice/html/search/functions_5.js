@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['printmatrix_0',['printMatrix',['../_graph_8c.html#a010629b220f1d28c44b86d31e8ad9e80',1,'printMatrix(Graph *G, int numVertici):&#160;Graph.c'],['../_graph_8h.html#a010629b220f1d28c44b86d31e8ad9e80',1,'printMatrix(Graph *G, int numVertici):&#160;Graph.c']]]
+  ['main_0',['main',['../_graph_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'Graph.c']]]
 ];

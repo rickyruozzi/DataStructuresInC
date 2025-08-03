@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stampagradi_0',['stampaGradi',['../_graph_8c.html#a656cf023092e4e9eaa878d0be11d5d32',1,'stampaGradi(Graph *G, int numVertici):&#160;Graph.c'],['../_graph_8h.html#a656cf023092e4e9eaa878d0be11d5d32',1,'stampaGradi(Graph *G, int numVertici):&#160;Graph.c']]]
+  ['readgraph_0',['ReadGraph',['../_graph_8c.html#a08024be9441b8be3ff2d6b22bb1e0f38',1,'ReadGraph(Graph *G, const char *Filename, bool isDirected):&#160;Graph.c'],['../_graph_8h.html#a08024be9441b8be3ff2d6b22bb1e0f38',1,'ReadGraph(Graph *G, const char *Filename, bool isDirected):&#160;Graph.c']]]
 ];

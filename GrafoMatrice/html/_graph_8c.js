@@ -1,6 +1,7 @@
 var _graph_8c =
 [
     [ "addEdge", "_graph_8c.html#a30a974ef5c65e858c4e43d293bd91b1d", null ],
+    [ "bellmanFord", "_graph_8c.html#ac2f3b9834d9a472fc52fce50d01c9ff5", null ],
     [ "Djikstra", "_graph_8c.html#a231740e0d16d1da5faef7b286cbcc2e4", null ],
     [ "FindMin", "_graph_8c.html#aa010d68b40e57aa386bdf88ca0d65e0c", null ],
     [ "initGraph", "_graph_8c.html#ae8d24e15f504393ea7b46c8d451aa2c4", null ],

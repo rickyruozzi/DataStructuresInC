@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../_graph_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'Graph.c']]],
-  ['matrix_1',['matrix',['../struct_graph.html#a7d588b2dd8241e53331ab67a29db0861',1,'Graph']]],
-  ['max_5fnodi_2',['MAX_NODI',['../_graph_8h.html#a383e1bb6301567fd3fe4aef9e1c2111d',1,'Graph.h']]]
+  ['initgraph_0',['initGraph',['../_graph_8c.html#ae8d24e15f504393ea7b46c8d451aa2c4',1,'initGraph(Graph *G, int numVertici):&#160;Graph.c'],['../_graph_8h.html#ae8d24e15f504393ea7b46c8d451aa2c4',1,'initGraph(Graph *G, int numVertici):&#160;Graph.c']]]
 ];

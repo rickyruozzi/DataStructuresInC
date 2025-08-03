@@ -164,6 +164,25 @@ void Djikstra(Graph* G, int dist[], int prev[], int src){
     free(visitati);
 }
 
+void bellmanFord(Graph* G, int dist[], int prev[], int src){
+    int vertici = G->vertici;
+    for(int i=0;i<vertici;i++){
+        dist[i]=INT_MAX;
+        prev[i]=-1;
+    }
+    dist[src]=0;
+    for(int i=0;i<vertici-1;i++){
+        for(int u=0;u<vertici;u++){
+            for(int v=0;v<vertici;v++){
+                if(G->matrix[u][v] > 0 && dist[u] != INT_MAX && dist[u]+G->matrix[u][v]<dist[v]){
+                    dist[v]=dist[u]+G->matrix[u][v];
+                    prev[v]=u;
+                }
+            }
+        }
+    }
+}
+
 int main(){
     Graph* G=(Graph*)malloc(sizeof(Graph));
     ReadGraph(G,"G.txt",true);

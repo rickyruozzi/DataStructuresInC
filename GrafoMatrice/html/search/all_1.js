@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['djikstra_0',['Djikstra',['../_graph_8c.html#a231740e0d16d1da5faef7b286cbcc2e4',1,'Graph.c']]]
+  ['bellmanford_0',['bellmanFord',['../_graph_8c.html#ac2f3b9834d9a472fc52fce50d01c9ff5',1,'Graph.c']]]
 ];

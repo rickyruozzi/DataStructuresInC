@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readgraph_0',['ReadGraph',['../_graph_8c.html#a08024be9441b8be3ff2d6b22bb1e0f38',1,'ReadGraph(Graph *G, const char *Filename, bool isDirected):&#160;Graph.c'],['../_graph_8h.html#a08024be9441b8be3ff2d6b22bb1e0f38',1,'ReadGraph(Graph *G, const char *Filename, bool isDirected):&#160;Graph.c']]]
+  ['printmatrix_0',['printMatrix',['../_graph_8c.html#a010629b220f1d28c44b86d31e8ad9e80',1,'printMatrix(Graph *G, int numVertici):&#160;Graph.c'],['../_graph_8h.html#a010629b220f1d28c44b86d31e8ad9e80',1,'printMatrix(Graph *G, int numVertici):&#160;Graph.c']]]
 ];
