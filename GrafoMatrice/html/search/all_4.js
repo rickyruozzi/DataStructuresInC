@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['printmatrix_0',['printMatrix',['../_graph_8c.html#a010629b220f1d28c44b86d31e8ad9e80',1,'printMatrix(Graph *G, int numVertici):&#160;Graph.c'],['../_graph_8h.html#a010629b220f1d28c44b86d31e8ad9e80',1,'printMatrix(Graph *G, int numVertici):&#160;Graph.c']]]
+  ['initgraph_0',['initGraph',['../_graph_8c.html#ae8d24e15f504393ea7b46c8d451aa2c4',1,'initGraph(Graph *G, int numVertici):&#160;Graph.c'],['../_graph_8h.html#ae8d24e15f504393ea7b46c8d451aa2c4',1,'initGraph(Graph *G, int numVertici):&#160;Graph.c']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../_graph_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'Graph.c']]]
+  ['findmin_0',['FindMin',['../_graph_8c.html#aa010d68b40e57aa386bdf88ca0d65e0c',1,'Graph.c']]]
 ];

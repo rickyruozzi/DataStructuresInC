@@ -107,6 +107,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:a656cf023092e4e9eaa878d0be11d5d32"><td class="mdescLeft">&#160;</td><td class="mdescRight">stampa i gradi dei nodi  <br /></td></tr>
 <tr class="memitem:a08024be9441b8be3ff2d6b22bb1e0f38" id="r_a08024be9441b8be3ff2d6b22bb1e0f38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08024be9441b8be3ff2d6b22bb1e0f38">ReadGraph</a> (<a class="el" href="struct_graph.html">Graph</a> *G, const char *Filename, bool isDirected)</td></tr>
 <tr class="memdesc:a08024be9441b8be3ff2d6b22bb1e0f38"><td class="mdescLeft">&#160;</td><td class="mdescRight">legge i dati di un grafo dal file e aggiorna i grafo  <br /></td></tr>
+<tr class="memitem:aa010d68b40e57aa386bdf88ca0d65e0c" id="r_aa010d68b40e57aa386bdf88ca0d65e0c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa010d68b40e57aa386bdf88ca0d65e0c">FindMin</a> (int dist[], bool visitati[], int v)</td></tr>
+<tr class="memdesc:aa010d68b40e57aa386bdf88ca0d65e0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">trova il nodo con distanza minima in dist non visitato  <br /></td></tr>
+<tr class="memitem:a231740e0d16d1da5faef7b286cbcc2e4" id="r_a231740e0d16d1da5faef7b286cbcc2e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a231740e0d16d1da5faef7b286cbcc2e4">Djikstra</a> (<a class="el" href="struct_graph.html">Graph</a> *G, int dist[], int prev[], int src)</td></tr>
+<tr class="memdesc:a231740e0d16d1da5faef7b286cbcc2e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">calcola i percorsi minimi tra il nodo sorgente e tutti gli altri nodi  <br /></td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
@@ -155,6 +159,85 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a231740e0d16d1da5faef7b286cbcc2e4" name="a231740e0d16d1da5faef7b286cbcc2e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a231740e0d16d1da5faef7b286cbcc2e4">&#9670;&#160;</a></span>Djikstra()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Djikstra </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graph.html">Graph</a> *</td>          <td class="paramname"><span class="paramname"><em>G</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>dist</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>prev</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>src</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>calcola i percorsi minimi tra il nodo sorgente e tutti gli altri nodi </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td></td></tr>
+    <tr><td class="paramname">dist</td><td></td></tr>
+    <tr><td class="paramname">prev</td><td></td></tr>
+    <tr><td class="paramname">src</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa010d68b40e57aa386bdf88ca0d65e0c" name="aa010d68b40e57aa386bdf88ca0d65e0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa010d68b40e57aa386bdf88ca0d65e0c">&#9670;&#160;</a></span>FindMin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FindMin </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>dist</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>visitati</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>trova il nodo con distanza minima in dist non visitato </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dist</td><td></td></tr>
+    <tr><td class="paramname">visitati</td><td></td></tr>
+    <tr><td class="paramname">v</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
 </div>
 </div>

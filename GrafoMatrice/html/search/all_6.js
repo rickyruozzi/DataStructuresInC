@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stampagradi_0',['stampaGradi',['../_graph_8c.html#a656cf023092e4e9eaa878d0be11d5d32',1,'stampaGradi(Graph *G, int numVertici):&#160;Graph.c'],['../_graph_8h.html#a656cf023092e4e9eaa878d0be11d5d32',1,'stampaGradi(Graph *G, int numVertici):&#160;Graph.c']]]
+  ['printmatrix_0',['printMatrix',['../_graph_8c.html#a010629b220f1d28c44b86d31e8ad9e80',1,'printMatrix(Graph *G, int numVertici):&#160;Graph.c'],['../_graph_8h.html#a010629b220f1d28c44b86d31e8ad9e80',1,'printMatrix(Graph *G, int numVertici):&#160;Graph.c']]]
 ];

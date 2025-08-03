@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readgraph_0',['ReadGraph',['../_graph_8c.html#a08024be9441b8be3ff2d6b22bb1e0f38',1,'ReadGraph(Graph *G, const char *Filename, bool isDirected):&#160;Graph.c'],['../_graph_8h.html#a08024be9441b8be3ff2d6b22bb1e0f38',1,'ReadGraph(Graph *G, const char *Filename, bool isDirected):&#160;Graph.c']]]
+  ['main_0',['main',['../_graph_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'Graph.c']]]
 ];
