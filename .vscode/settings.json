@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "*.embeddedhtml": "html",
-        "listtobst.h": "c"
+        "listtobst.h": "c",
+        "graph.h": "c"
     }
 }
