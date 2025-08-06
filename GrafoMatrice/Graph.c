@@ -171,7 +171,7 @@ void bellmanFord(Graph* G, int dist[], int prev[], int src){
         prev[i]=-1;
     }
     dist[src]=0;
-    for(int i=0;i<vertici-1;i++){
+    for(int i=0;i<vertici-1;i++){   //solo eseguendo la procedura seguente avremo la certezza di attraversare ogni nodo
         for(int u=0;u<vertici;u++){
             for(int v=0;v<vertici;v++){
                 if(G->matrix[u][v] > 0 && dist[u] != INT_MAX && dist[u]+G->matrix[u][v]<dist[v]){
