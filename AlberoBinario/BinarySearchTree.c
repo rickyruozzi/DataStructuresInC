@@ -53,4 +53,28 @@ void insert_node_recursive(treeNode* bst, treeNode* node){
     }
 }
 
+/**
+ * @brief return true if a specified value has been found in the bst 
+ * 
+ * @param bst 
+ * @param value 
+ * @return true 
+ * @return false 
+ */
+bool find_node(treeNode* bst, int value){
+    if(bst == NULL){
+        return false;
+    }
+    if(bst->data==value){
+        return true;
+    }
+    if(value < bst->data){
+        return find_node(bst->left, value);
+    }
+    if(value > bst->data){
+        return find_node(bst->right, value);
+    }
+    return false;
+}
+
 int main(){}
