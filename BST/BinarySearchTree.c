@@ -77,4 +77,31 @@ bool find_node(treeNode* bst, int value){
     return false;
 }
 
+/**
+ * @brief print bst pre_view
+ * 
+ * @param bst 
+ */
+void print_pre_order(treeNode* bst){
+    if(bst != NULL){
+        printf("Il valore del nodo è: %d\n",bst->data);
+        print_pre_order(bst->left);
+        print_pre_order(bst->right);
+    }
+}
+
+
+/**
+ * @brief print bst post_view
+ * 
+ * @param bst 
+ */
+void print_post_order(treeNode* bst){
+    if(bst != NULL){
+        print_post_order(bst->left);
+        print_post_order(bst->right);
+        printf("Il valore del nodo è: %d\n ",bst->data);
+    }
+}
+
 int main(){}
