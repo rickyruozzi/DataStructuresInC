@@ -172,6 +172,61 @@ void addLeafs(treeNode* bst,int sum){
     }
 }
 
+/**
+ * @brief ci serve per check_sum
+ * 
+ */
+typedef struct {
+    bool flag;
+    int sum;
+} CheckResult;
+
+/**
+ * @brief controlla se la somma del sottoalbero destro è sempre uguale alla somma del sottoalbero sinistro
+ * 
+ * @param bst 
+ * @return CheckResult* 
+ */
+CheckResult* check_sum(treeNode* bst){
+    if(bst->left==NULL && bst->right==NULL){
+        CheckResult* r=(CheckResult*)malloc(sizeof(CheckResult));
+        r->flag=true;
+        r->sum=bst->data;
+        return r;
+    }
+    CheckResult* sinistra;
+    CheckResult* destra;
+    if(bst->left!=NULL){
+        sinistra=check_sum(bst->left);
+    }
+    else{
+        sinistra=(CheckResult*)malloc(sizeof(CheckResult));
+        sinistra->flag=true;
+        sinistra->sum=0;
+    }
+    if(bst->right!=NULL){
+        destra=check_sum(bst->right);
+    }
+    else{
+        destra=(CheckResult*)malloc(sizeof(CheckResult));
+        destra->flag=true;
+        destra->sum=0;
+    }
+    CheckResult* risultato=(CheckResult*)malloc(sizeof(CheckResult));
+    if(sinistra->sum==destra->sum && sinistra->flag && destra->flag){
+        risultato->flag=true;
+        risultato->sum=destra->sum+sinistra->sum+bst->data;
+        free(destra);
+        free(sinistra);
+        return risultato;
+    }
+    risultato->flag=false;
+    risultato->sum=destra->sum+sinistra->sum+bst->data;
+    free(destra);
+    free(sinistra);
+    return risultato;
+}
+
 int main(){
     FILE* f = fopen("BST.txt", "r");  
     treeNode* bst=NULL;        
