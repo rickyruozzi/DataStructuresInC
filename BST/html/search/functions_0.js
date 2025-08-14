@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['create_5fnode_0',['create_node',['../_binary_search_tree_8c.html#ad942f51bc56f92914559bee857f2e769',1,'create_node(int value):&#160;BinarySearchTree.c'],['../_binary_search_tree_8h.html#ad942f51bc56f92914559bee857f2e769',1,'create_node(int value):&#160;BinarySearchTree.c']]]
+  ['addleafs_0',['addLeafs',['../_binary_search_tree_8c.html#a5adcd1b4f6cec25d5d1785a048b81da2',1,'BinarySearchTree.c']]]
 ];

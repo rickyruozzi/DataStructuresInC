@@ -84,7 +84,7 @@ bool find_node(treeNode* bst, int value){
  */
 void print_pre_order(treeNode* bst){
     if(bst != NULL){
-        printf("Il valore del nodo è: %d\n",bst->data);
+        printf("valore del nodo: %d\n",bst->data);
         print_pre_order(bst->left);
         print_pre_order(bst->right);
     }
@@ -100,8 +100,89 @@ void print_post_order(treeNode* bst){
     if(bst != NULL){
         print_post_order(bst->left);
         print_post_order(bst->right);
-        printf("Il valore del nodo è: %d\n ",bst->data);
+        printf("valore del nodo: %d\n ",bst->data);
     }
 }
 
-int main(){}
+/**
+ * @brief read a BST form a file
+ * 
+ * @param f 
+ * @return treeNode* 
+ */
+treeNode* readFromFile(FILE* f){
+    if (!f){
+        perror("Errore nell'apertura del file");
+        return NULL;
+    }
+    int data;
+    treeNode* bst=NULL;
+    if(fscanf(f, "%d",&data)==1){
+        bst = create_node(data);
+    }
+    else{
+        printf("errore nel formato del file");
+        return NULL;
+    }
+    while(fscanf(f, "%d",&data)==1){
+        treeNode** BST=NULL;
+        BST=&bst;
+        insert_node(BST, data);
+    }
+    return bst;
+}
+
+/**
+ * @brief stampa gli antenati di un nodo
+ * 
+ * @param bst 
+ * @param value 
+ * @return true 
+ * @return false 
+ */
+bool stampa_antenati(treeNode* bst, int value){
+    if(bst==NULL){return false;}
+    if(bst->data==value){return true;}
+    if(stampa_antenati(bst->left,value) || stampa_antenati(bst->right,value)){
+        printf("valore : %d", bst->data);
+        return true;
+    }
+    return false;
+}
+
+/**
+ * @brief aggiunge un nodo come figio destro di una foglia se il contenuto di essa è uguale alla somma dei nodi tramite i quali ci siamo arrivati
+ * 
+ * @param bst 
+ * @param sum 
+ */
+void addLeafs(treeNode* bst,int sum){
+    if(bst->left==NULL && bst->right==NULL){
+        if(sum == bst->data){
+            bst->right=create_node(sum+1);
+        }
+    }
+    else{
+        if(bst->left!=NULL){
+            addLeafs(bst->left, sum+bst->data);
+        }
+        if(bst->right!=NULL){
+            addLeafs(bst->right, sum+bst->data);
+        }
+    }
+}
+
+int main(){
+    FILE* f = fopen("BST.txt", "r");  
+    treeNode* bst=NULL;        
+    if (f != NULL) {
+        bst=readFromFile(f);
+    }
+    else{
+        printf("impossibile leggere il file");
+        return 0;
+    }
+    print_pre_order(bst);
+    print_post_order(bst);
+    return 0;
+}
