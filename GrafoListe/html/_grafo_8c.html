@@ -119,7 +119,14 @@ Functions</h2></td></tr>
 <tr class="memdesc:aa61b9567194531e98bea7215d5c6f9c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">trova il nodo con distanza minima non visitato (così garantamo la logica greedy)  <br /></td></tr>
 <tr class="memitem:a07ef683139a9549302ade1f8fc85d4b1" id="r_a07ef683139a9549302ade1f8fc85d4b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07ef683139a9549302ade1f8fc85d4b1">Djikstra</a> (int src, int *dist, int *prev, <a class="el" href="structgrafo.html">grafo</a> *Grafo)</td></tr>
 <tr class="memdesc:a07ef683139a9549302ade1f8fc85d4b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">calcola le distanza minime  <br /></td></tr>
+<tr class="memitem:aafb9d0d2a62769e8075497a92fcd1ed9" id="r_aafb9d0d2a62769e8075497a92fcd1ed9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafb9d0d2a62769e8075497a92fcd1ed9">cerca_ciclo</a> (<a class="el" href="structgrafo.html">grafo</a> *<a class="el" href="structgrafo.html">grafo</a>)</td></tr>
+<tr class="memdesc:aafb9d0d2a62769e8075497a92fcd1ed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">permette di cercare un ciclo nel grafo  <br /></td></tr>
+<tr class="memitem:a24fa52d7cd36f10545fa598edc4de838" id="r_a24fa52d7cd36f10545fa598edc4de838"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24fa52d7cd36f10545fa598edc4de838">ciclo</a> (<a class="el" href="structgrafo.html">grafo</a> *Grafo, int pre[], int post[], int v)</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a42715f65f02da52edc5b22021d8ae670" id="r_a42715f65f02da52edc5b22021d8ae670"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42715f65f02da52edc5b22021d8ae670">time</a> = 0</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a2138981cad6557ec4d5979a9ae583432" name="a2138981cad6557ec4d5979a9ae583432"></a>
@@ -161,6 +168,65 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aafb9d0d2a62769e8075497a92fcd1ed9" name="aafb9d0d2a62769e8075497a92fcd1ed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafb9d0d2a62769e8075497a92fcd1ed9">&#9670;&#160;</a></span>cerca_ciclo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cerca_ciclo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrafo.html">grafo</a> *</td>          <td class="paramname"><span class="paramname"><em>grafo</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>permette di cercare un ciclo nel grafo </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grafo</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+</div>
+</div>
+<a id="a24fa52d7cd36f10545fa598edc4de838" name="a24fa52d7cd36f10545fa598edc4de838"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24fa52d7cd36f10545fa598edc4de838">&#9670;&#160;</a></span>ciclo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ciclo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrafo.html">grafo</a> *</td>          <td class="paramname"><span class="paramname"><em>Grafo</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>pre</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>post</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -532,6 +598,21 @@ false </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
+<a id="a42715f65f02da52edc5b22021d8ae670" name="a42715f65f02da52edc5b22021d8ae670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42715f65f02da52edc5b22021d8ae670">&#9670;&#160;</a></span>time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int time = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

@@ -254,6 +254,49 @@ void Djikstra(int src, int* dist, int* prev, grafo* Grafo){
         }
     }
 }
+int time = 0; 
+/**
+ * @brief permette di cercare un ciclo nel grafo
+ * 
+ * @param grafo 
+ * @return true 
+ * @return false 
+ */
+bool cerca_ciclo(grafo* grafo){
+    int pre[grafo->vertici];
+    int post[grafo->vertici];
+    time=0;
+    for(int i=0; i<grafo->vertici;i++){
+        pre[i]=0;
+        post[i]=0;
+    }
+    for(int i=0; i<grafo->vertici; i++){
+        if(pre[i]==0 && ciclo(grafo, pre, post, i)){
+            return true;
+        }
+    }
+    return false;
+}
+
+bool ciclo(grafo* Grafo, int pre[], int post[], int v){
+    time=time+1;
+    pre[v]=time;
+    Nodo* testa=Grafo->adjacency_list[v];
+    while(testa!=NULL){
+        if(pre[testa->vertex]==0){
+            if(ciclo(Grafo, pre, post, testa->vertex)){return true;}
+        }
+        else{
+            if(post[testa->vertex]==0){
+                return true;
+            }
+        }
+        testa=testa->next;
+    }
+    time=time+1;
+    post[v]=time;
+    return false;
+}
 
 int main(){
     grafo* Grafo = loadGraphFromFile("Grafo.txt", true);

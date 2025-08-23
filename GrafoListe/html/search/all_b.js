@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['trova_5fminimo_0',['trova_minimo',['../_grafo_8c.html#aa61b9567194531e98bea7215d5c6f9c3',1,'Grafo.c']]]
+  ['time_0',['time',['../_grafo_8c.html#a42715f65f02da52edc5b22021d8ae670',1,'Grafo.c']]],
+  ['trova_5fminimo_1',['trova_minimo',['../_grafo_8c.html#aa61b9567194531e98bea7215d5c6f9c3',1,'Grafo.c']]]
 ];

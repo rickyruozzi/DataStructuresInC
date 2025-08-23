@@ -4,7 +4,7 @@ var indexSectionsWithContent =
   1: "gn",
   2: "g",
   3: "acdefilmptw",
-  4: "anpv",
+  4: "anptv",
   5: "gn"
 };
 
