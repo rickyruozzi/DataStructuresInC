@@ -166,5 +166,41 @@ void* Djikstra(graph* G, int src, int* dist, int* prev){
         }
     }
 }
+/*
+1-inizializzazione
+2-scorrimento
+3-individuazione del nodo non visitato meno distante
+4-controllo delle distanze (il nodo non deve essere visitato, deve essere raggiungibile 
+dalla sorgente e la distanza calcolata deve essere inferiore a quelle calcolate in precedenza)
+*/
 
+
+int time=0;
+/**
+ * @brief controlla la presenza di cicli nel grafo
+ * 
+ * @param G 
+ * @param pre 
+ * @param post 
+ * @param v 
+ * @return true 
+ * @return false 
+ */
+bool searchCycle(graph* G, int* pre, int* post, int v){
+    time=time+1;
+    pre[v]=time;
+    node* current=G->list[v];
+    while(current!=NULL){
+        if(pre[current->vertex]==0){
+            if (searchCycle(G,pre,post,current->vertex)) return true;
+        }
+        else{
+            if(post[current->vertex]==0) return true;
+        }
+        current=current->next;
+    }
+    time=time+1;
+    post[v]=time;
+    return false;
+}
 int main(){}
