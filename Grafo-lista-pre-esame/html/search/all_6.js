@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['next_0',['next',['../structnode.html#aa3e8aa83f864292b5a01210f4453fcc0',1,'node']]],
-  ['node_1',['node',['../structnode.html',1,'node'],['../_grafo_lista_8h.html#af4aeda155dbe167f1c1cf38cb65bf324',1,'node:&#160;GrafoLista.h']]]
+  ['main_0',['main',['../_grafo_lista_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'GrafoLista.c']]]
 ];

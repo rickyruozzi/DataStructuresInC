@@ -203,4 +203,49 @@ bool searchCycle(graph* G, int* pre, int* post, int v){
     post[v]=time;
     return false;
 }
+
+
+/**
+ * @brief Algoritmo di bellman ford per i cammini minimi da src agli altri nodi raggiungibili del grafo
+ * 
+ * @param G 
+ * @param dist 
+ * @param prev 
+ * @param src 
+ */
+void BellmanFord(graph* G, int* dist[], int* prev, int src){
+    int v= G->vertex_number;
+    for(int i=0; i<v; i++){
+        dist[i]=INT_MAX;
+        prev[i]=-1;
+    }
+    dist[src]=0;
+    for(int i=0; i<v; i++){
+        for(int j=0; j<v; j++){
+            node* current = G->list[j];
+            while(current!=NULL){
+                int v=current->vertex;
+                int w=current->weight;
+                if(dist[j]!=INT_MAX && dist[v]>dist[j]+w){
+                    dist[v]=dist[j]+w;
+                    prev[v]=j;
+                }
+                current=current->next;
+            }
+        }
+    }
+    for(int i=0; i<v; i++){
+        node* current=G->list[i];
+        while(current!=NULL){
+            int w=current->weight;
+            int v=current->vertex;
+            if(dist[i]+w<dist[v]){
+                printf("Ciclo negativo individuato!");
+                free(dist);
+                return;
+            }
+            current=current->next;
+        }
+    }
+}
 int main(){}

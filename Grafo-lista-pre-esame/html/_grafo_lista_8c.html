@@ -108,7 +108,15 @@ Functions</h2></td></tr>
 <tr class="memdesc:aaee8bf04815d306e31a934027baf4cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">trova il nodo meno distante non visitato  <br /></td></tr>
 <tr class="memitem:a0d0e29123be54028dca33ade03e88a1c" id="r_a0d0e29123be54028dca33ade03e88a1c"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d0e29123be54028dca33ade03e88a1c">Djikstra</a> (<a class="el" href="structgraph.html">graph</a> *G, int src, int *dist, int *prev)</td></tr>
 <tr class="memdesc:a0d0e29123be54028dca33ade03e88a1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">trova i cammini minimi da src ad ogni altro nodo  <br /></td></tr>
+<tr class="memitem:a3c18e091cdf6d24896deec04c607e49c" id="r_a3c18e091cdf6d24896deec04c607e49c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c18e091cdf6d24896deec04c607e49c">searchCycle</a> (<a class="el" href="structgraph.html">graph</a> *G, int *pre, int *post, int v)</td></tr>
+<tr class="memdesc:a3c18e091cdf6d24896deec04c607e49c"><td class="mdescLeft">&#160;</td><td class="mdescRight">controlla la presenza di cicli nel grafo  <br /></td></tr>
+<tr class="memitem:adfa1c4609ea39b2ae5399ac922fce8a2" id="r_adfa1c4609ea39b2ae5399ac922fce8a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfa1c4609ea39b2ae5399ac922fce8a2">BellmanFord</a> (<a class="el" href="structgraph.html">graph</a> *G, int *dist[], int *prev, int src)</td></tr>
+<tr class="memdesc:adfa1c4609ea39b2ae5399ac922fce8a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Algoritmo di bellman ford per i cammini minimi da src agli altri nodi raggiungibili del grafo.  <br /></td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a42715f65f02da52edc5b22021d8ae670" id="r_a42715f65f02da52edc5b22021d8ae670"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42715f65f02da52edc5b22021d8ae670">time</a> =0</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a3982fffc38f018b4dbe2eed9224bfa29" name="a3982fffc38f018b4dbe2eed9224bfa29"></a>
@@ -147,6 +155,48 @@ Functions</h2></td></tr>
     <tr><td class="paramname">src</td><td></td></tr>
     <tr><td class="paramname">dest</td><td></td></tr>
     <tr><td class="paramname">weight</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adfa1c4609ea39b2ae5399ac922fce8a2" name="adfa1c4609ea39b2ae5399ac922fce8a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfa1c4609ea39b2ae5399ac922fce8a2">&#9670;&#160;</a></span>BellmanFord()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BellmanFord </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgraph.html">graph</a> *</td>          <td class="paramname"><span class="paramname"><em>G</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>dist</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>prev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>src</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Algoritmo di bellman ford per i cammini minimi da src agli altri nodi raggiungibili del grafo. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td></td></tr>
+    <tr><td class="paramname">dist</td><td></td></tr>
+    <tr><td class="paramname">prev</td><td></td></tr>
+    <tr><td class="paramname">src</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -319,6 +369,51 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a3c18e091cdf6d24896deec04c607e49c" name="a3c18e091cdf6d24896deec04c607e49c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c18e091cdf6d24896deec04c607e49c">&#9670;&#160;</a></span>searchCycle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool searchCycle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgraph.html">graph</a> *</td>          <td class="paramname"><span class="paramname"><em>G</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>pre</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>post</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>controlla la presenza di cicli nel grafo </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td></td></tr>
+    <tr><td class="paramname">pre</td><td></td></tr>
+    <tr><td class="paramname">post</td><td></td></tr>
+    <tr><td class="paramname">v</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+</div>
+</div>
 <a id="aaee8bf04815d306e31a934027baf4cf8" name="aaee8bf04815d306e31a934027baf4cf8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaee8bf04815d306e31a934027baf4cf8">&#9670;&#160;</a></span>trova_minimo()</h2>
 
@@ -353,6 +448,21 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
+<a id="a42715f65f02da52edc5b22021d8ae670" name="a42715f65f02da52edc5b22021d8ae670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42715f65f02da52edc5b22021d8ae670">&#9670;&#160;</a></span>time</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int time =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

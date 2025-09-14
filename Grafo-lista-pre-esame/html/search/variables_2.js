@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['vertex_0',['vertex',['../structnode.html#ab4b1f345158daee0725acecd5ba817b1',1,'node']]],
-  ['vertex_5fnumber_1',['vertex_number',['../structgraph.html#ab320ca9ec64cb051e10d7d0f1993636f',1,'graph']]]
+  ['time_0',['time',['../_grafo_lista_8c.html#a42715f65f02da52edc5b22021d8ae670',1,'GrafoLista.c']]]
 ];
