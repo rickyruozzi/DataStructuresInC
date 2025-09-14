@@ -206,8 +206,7 @@ bool searchCycle(graph* G, int* pre, int* post, int v){
 
 
 /**
- * @brief Algoritmo di bellman ford per i cammini minimi da src agli altri nodi raggiungibili del grafo
- * 
+ * @brief Algoritmo di bellman ford per i cammini minimi da src agli altri nodi raggiungibili del grafo * 
  * @param G 
  * @param dist 
  * @param prev 
