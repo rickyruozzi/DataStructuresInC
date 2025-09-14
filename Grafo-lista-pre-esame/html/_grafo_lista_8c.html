@@ -92,6 +92,7 @@ $(function(){initNavTree('_grafo_lista_8c.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_grafo_lista_8h_source.html">GrafoLista.h</a>&quot;</code><br />
+<code>#include &lt;limits.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -102,6 +103,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a3982fffc38f018b4dbe2eed9224bfa29" id="r_a3982fffc38f018b4dbe2eed9224bfa29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3982fffc38f018b4dbe2eed9224bfa29">addEdge</a> (<a class="el" href="structgraph.html">graph</a> *G, int src, int dest, int weight)</td></tr>
 <tr class="memdesc:a3982fffc38f018b4dbe2eed9224bfa29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an edge to the graph.  <br /></td></tr>
 <tr class="memitem:a5233ac6314b38673568b7a09db72e04a" id="r_a5233ac6314b38673568b7a09db72e04a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgraph.html">graph</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5233ac6314b38673568b7a09db72e04a">readGraphFromFile</a> (const char *filename, bool isDirected)</td></tr>
+<tr class="memitem:a99a6bba2fab519ea6952060f199f758a" id="r_a99a6bba2fab519ea6952060f199f758a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99a6bba2fab519ea6952060f199f758a">removeEdge</a> (<a class="el" href="structgraph.html">graph</a> *G, int src, int dest, bool isDirected)</td></tr>
+<tr class="memitem:aaee8bf04815d306e31a934027baf4cf8" id="r_aaee8bf04815d306e31a934027baf4cf8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaee8bf04815d306e31a934027baf4cf8">trova_minimo</a> (bool *visited, int *dist, int v)</td></tr>
+<tr class="memdesc:aaee8bf04815d306e31a934027baf4cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">trova il nodo meno distante non visitato  <br /></td></tr>
+<tr class="memitem:a0d0e29123be54028dca33ade03e88a1c" id="r_a0d0e29123be54028dca33ade03e88a1c"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d0e29123be54028dca33ade03e88a1c">Djikstra</a> (<a class="el" href="structgraph.html">graph</a> *G, int src, int *dist, int *prev)</td></tr>
+<tr class="memdesc:a0d0e29123be54028dca33ade03e88a1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">trova i cammini minimi da src ad ogni altro nodo  <br /></td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
@@ -203,6 +209,47 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a0d0e29123be54028dca33ade03e88a1c" name="a0d0e29123be54028dca33ade03e88a1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d0e29123be54028dca33ade03e88a1c">&#9670;&#160;</a></span>Djikstra()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * Djikstra </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgraph.html">graph</a> *</td>          <td class="paramname"><span class="paramname"><em>G</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>dist</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>prev</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>trova i cammini minimi da src ad ogni altro nodo </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td></td></tr>
+    <tr><td class="paramname">src</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int* </dd></dl>
+
+</div>
+</div>
 <a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
 
@@ -238,6 +285,74 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a99a6bba2fab519ea6952060f199f758a" name="a99a6bba2fab519ea6952060f199f758a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99a6bba2fab519ea6952060f199f758a">&#9670;&#160;</a></span>removeEdge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void removeEdge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgraph.html">graph</a> *</td>          <td class="paramname"><span class="paramname"><em>G</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>isDirected</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaee8bf04815d306e31a934027baf4cf8" name="aaee8bf04815d306e31a934027baf4cf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaee8bf04815d306e31a934027baf4cf8">&#9670;&#160;</a></span>trova_minimo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int trova_minimo </td>
+          <td>(</td>
+          <td class="paramtype">bool *</td>          <td class="paramname"><span class="paramname"><em>visited</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>dist</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>trova il nodo meno distante non visitato </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">visited</td><td></td></tr>
+    <tr><td class="paramname">dist</td><td></td></tr>
+    <tr><td class="paramname">v</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
 </div>
 </div>

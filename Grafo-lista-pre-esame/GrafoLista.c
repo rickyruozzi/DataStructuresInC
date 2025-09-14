@@ -1,4 +1,5 @@
 #include "GrafoLista.h"
+#include <limits.h>
 /**
  * @brief Create a Graph
  * 
@@ -79,4 +80,91 @@ graph* readGraphFromFile(const char* filename, bool isDirected){
         }
     }
 }
+
+void removeEdge(graph* G, int src, int dest,bool  isDirected){
+    if(G->list[src]==NULL) return;
+    node* testa=G->list[src];
+    if(testa->vertex==dest){
+        G->list[src]=testa->next;
+        free(testa);
+        return;
+    }
+    while(testa->next!=NULL && testa->next->vertex!=dest){
+        testa=testa->next;
+    }
+    if(testa->next!=NULL){
+        node* temp=testa->next;
+        testa->next=temp->next;
+        free(temp);
+    }
+    if(!isDirected){
+        node* testa2=G->list[dest];
+        if(testa2->vertex==src){
+            G->list[dest]=testa2->next;
+            free(testa2);
+            return;
+        }
+        while(testa2->next!=NULL && testa2->next->vertex!=src){
+            testa2=testa2->next;
+        }
+        if(testa2->next!=NULL){
+            node* temp=testa2->next;
+            testa2->next=temp->next;
+            free(temp);
+        }
+    }
+}
+
+/**
+ * @brief trova il nodo meno distante non visitato
+ * 
+ * @param visited 
+ * @param dist 
+ * @param v 
+ * @return int 
+ */
+int trova_minimo(bool* visited, int* dist, int v){
+    int min=INT_MAX;
+    int index=-1;
+    for(int i=0; i<v; i++){
+        if(!visited[i] && min>dist[i]){
+            min=dist[i];
+            index=i;
+        }
+    }
+    return index;
+}
+
+/**
+ * @brief trova i cammini minimi da src ad ogni altro nodo
+ * 
+ * @param G 
+ * @param src 
+ * @return int* 
+ */
+void* Djikstra(graph* G, int src, int* dist, int* prev){
+    bool* visited=(bool*)malloc(sizeof(bool)*G->vertex_number);
+    for(int i=0; i<G->vertex_number; i++){
+        dist[i]=INT_MAX;
+        prev[i]=-1;
+        visited[i]=false;
+    }
+    dist[src]=0;
+    for(int j=0;j<G->vertex_number;j++){
+        int u=trova_minimo(visited, dist, G->vertex_number);
+        if(u==-1) return;
+        visited[u]=true;
+        node* current= G->list[src];
+        while(current!=NULL){
+            int v= current->vertex;
+            int w=current->weight;
+            if(!visited[v] && dist[u]!=INT_MAX && dist[v]>dist[u]+w){
+                dist[v]=dist[u]+w;
+                prev[v]=u;
+            }
+            current=current->next;
+        }
+    }
+}
+
 int main(){}

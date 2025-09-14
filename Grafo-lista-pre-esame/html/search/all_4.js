@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../_grafo_lista_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'GrafoLista.c']]]
+  ['list_0',['list',['../structgraph.html#a4f92067916c9ae2479ad490e423c70aa',1,'graph']]]
 ];

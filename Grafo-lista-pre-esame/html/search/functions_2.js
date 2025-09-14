@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../_grafo_lista_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'GrafoLista.c']]]
+  ['djikstra_0',['Djikstra',['../_grafo_lista_8c.html#a0d0e29123be54028dca33ade03e88a1c',1,'GrafoLista.c']]]
 ];
