@@ -9,4 +9,12 @@ typedef struct treeNode{
     struct treeNode* right;
 }treeNode;
 
+void init(treeNode* root);
+bool isEmpty(treeNode* root);
+void insert(treeNode* root, int val); // inserimento per livello
+bool search(treeNode* root, int val);
+void printInOrder(treeNode* root);
+void printPreOrder(treeNode* root);
+void printPostOrder(treeNode* root);
+void freeTree(treeNode* root);
 #endif
