@@ -146,4 +146,33 @@ void Dijkstra(grafom* G, int src, int* dist, int* prev){
     free(visited);
 }
 
+void bellmanFord(grafom* G, int src, int* prev, int* dist) {
+    for (int i = 0; i < G->numNodes; i++) {
+        dist[i] = INT_MAX;
+        prev[i] = -1;
+    }
+    dist[src] = 0;
+
+    // Relax edges (V-1) times
+    for (int i = 0; i < G->numNodes - 1; i++) {
+        for (int j = 0; j < G->numNodes; j++) {
+            for (int k = 0; k < G->numNodes; k++) {
+                if (G->matrix[j][k] != 0 && dist[j] != INT_MAX && dist[k] > dist[j] + G->matrix[j][k]) {
+                    dist[k] = dist[j] + G->matrix[j][k];
+                    prev[k] = j;
+                }
+            }
+        }
+    }
+
+    // Check for negative-weight cycles
+    for (int i = 0; i < G->numNodes; i++) {
+        for (int j = 0; j < G->numNodes; j++) {
+            if (G->matrix[i][j] != 0 && dist[i] != INT_MAX && dist[j] > dist[i] + G->matrix[i][j]) {
+                printf("individuato ciclo negativo!!");
+                return;
+            }
+        }
+    }
+}
 int main(){}
