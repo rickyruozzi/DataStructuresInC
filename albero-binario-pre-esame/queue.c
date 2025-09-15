@@ -35,7 +35,25 @@ void enqueue(Queue *q, Node* nodo){
     q->rear=(q->rear+1)%q->capacity;
     q->data[q->rear]=nodo;
     q->size++;
+}
 
+Node* dequeue(Queue * q){
+    if(isEmpty(q)){
+        printf("Coda vuota\n");
+        return NULL;
+    }
+    Node* nodo = q->data[q->front];
+    q->front = (q->front + 1) % q->capacity;
+    q->size--;
+    return nodo;
+}
+
+Node* peek(Queue* q){
+    if(isEmpty(q)){
+        printf("Coda vuota\n");
+        return NULL;
+    }
+    return q->data[q->front];
 }
 
 int main(){}

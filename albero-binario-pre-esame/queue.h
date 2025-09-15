@@ -12,7 +12,7 @@ typedef struct Node{
 }Node;
 // Struttura della coda
 typedef struct {
-    Node* data;  // array per memorizzare gli elementi della coda
+    Node** data;  // array per memorizzare gli elementi della coda
     int front;      // indice del primo elemento
     int rear;       // indice dell'ultimo elemento
     int size;       // numero di elementi presenti
@@ -26,9 +26,9 @@ void freeQueue(Queue* q);
 bool isEmpty(Queue* q);
 bool isFull(Queue* q);
 
-void enqueue(Queue* q, int value);
-int dequeue(Queue* q);
+void enqueue(Queue* q, Node* nodo);
+Node* dequeue(Queue* q);
 
-int peek(Queue* q);   // restituisce l'elemento in testa senza rimuoverlo
+Node* peek(Queue* q);   // restituisce l'elemento in testa senza rimuoverlo
 
 #endif
