@@ -2,6 +2,8 @@
     "files.associations": {
         "*.embeddedhtml": "html",
         "listtobst.h": "c",
-        "graph.h": "c"
+        "graph.h": "c",
+        "albero.h": "c",
+        "queue.h": "c"
     }
 }

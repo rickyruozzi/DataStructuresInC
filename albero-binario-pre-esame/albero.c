@@ -1,4 +1,5 @@
 #include "albero.h"
+#include <queue.h>
 /**
  * @brief inizializza l'albero
  * 
@@ -23,9 +24,5 @@ bool isEmpty(treeNode* root){
     return false;
 }
 
-// Inserimento per livello (level-order)
-void insert(treeNode* root, int val) {
-    
-}
 
 int main(){}
