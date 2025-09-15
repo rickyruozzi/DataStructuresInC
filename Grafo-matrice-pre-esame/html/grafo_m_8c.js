@@ -1,6 +1,7 @@
 var grafo_m_8c =
 [
     [ "addEdge", "grafo_m_8c.html#ad24c8a5393709f2785be72e59b0603ef", null ],
+    [ "bellmanFord", "grafo_m_8c.html#a1267e16229e6a44e115ac89e7099485d", null ],
     [ "Dijkstra", "grafo_m_8c.html#a0a1209b8f5671a36a050d57353c7eaee", null ],
     [ "freeGraph", "grafo_m_8c.html#ad2b9ab0d1502441d0eeaac423d7bfb39", null ],
     [ "hasEdge", "grafo_m_8c.html#af0064c79f70e33b18d88bd4dd0e2c2bd", null ],
