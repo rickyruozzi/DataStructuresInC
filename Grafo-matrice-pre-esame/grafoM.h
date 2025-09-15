@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 typedef struct grafom{
     int** matrix;   //array di array (matrice)
     int numNodes;

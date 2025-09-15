@@ -96,9 +96,22 @@ $(function(){initNavTree('grafo_m_8c.html','',''); });
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:af4743c213178ee4805479e04c5e6da6f" id="r_af4743c213178ee4805479e04c5e6da6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4743c213178ee4805479e04c5e6da6f">init</a> (<a class="el" href="structgrafom.html">grafom</a> *G, int numNodes)</td></tr>
+<tr class="memdesc:af4743c213178ee4805479e04c5e6da6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">inizializza il grafo  <br /></td></tr>
 <tr class="memitem:a5ac2b141d4dec975534610ca7ad771b4" id="r_a5ac2b141d4dec975534610ca7ad771b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ac2b141d4dec975534610ca7ad771b4">isEmpty</a> (<a class="el" href="structgrafom.html">grafom</a> *G)</td></tr>
+<tr class="memdesc:a5ac2b141d4dec975534610ca7ad771b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">controlla se il grafo è vuoto  <br /></td></tr>
 <tr class="memitem:ad24c8a5393709f2785be72e59b0603ef" id="r_ad24c8a5393709f2785be72e59b0603ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad24c8a5393709f2785be72e59b0603ef">addEdge</a> (<a class="el" href="structgrafom.html">grafom</a> *G, int src, int dest, int weight)</td></tr>
+<tr class="memdesc:ad24c8a5393709f2785be72e59b0603ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">aggiunge un arco al grafo  <br /></td></tr>
 <tr class="memitem:a0f6a8cd2a2a4fdb61011be72bd461e72" id="r_a0f6a8cd2a2a4fdb61011be72bd461e72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f6a8cd2a2a4fdb61011be72bd461e72">removeEdge</a> (<a class="el" href="structgrafom.html">grafom</a> *G, int src, int dest)</td></tr>
+<tr class="memdesc:a0f6a8cd2a2a4fdb61011be72bd461e72"><td class="mdescLeft">&#160;</td><td class="mdescRight">rimuove un arco dal grafo  <br /></td></tr>
+<tr class="memitem:af0064c79f70e33b18d88bd4dd0e2c2bd" id="r_af0064c79f70e33b18d88bd4dd0e2c2bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0064c79f70e33b18d88bd4dd0e2c2bd">hasEdge</a> (<a class="el" href="structgrafom.html">grafom</a> *G, int src, int dest)</td></tr>
+<tr class="memdesc:af0064c79f70e33b18d88bd4dd0e2c2bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">verifica l'esistenza di un arco  <br /></td></tr>
+<tr class="memitem:aaea88c3a4a99ddd8105f6327004f67ce" id="r_aaea88c3a4a99ddd8105f6327004f67ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaea88c3a4a99ddd8105f6327004f67ce">printGraph</a> (<a class="el" href="structgrafom.html">grafom</a> *G)</td></tr>
+<tr class="memdesc:aaea88c3a4a99ddd8105f6327004f67ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">stampa il grafo  <br /></td></tr>
+<tr class="memitem:ad2b9ab0d1502441d0eeaac423d7bfb39" id="r_ad2b9ab0d1502441d0eeaac423d7bfb39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2b9ab0d1502441d0eeaac423d7bfb39">freeGraph</a> (<a class="el" href="structgrafom.html">grafom</a> *G)</td></tr>
+<tr class="memitem:aaee8bf04815d306e31a934027baf4cf8" id="r_aaee8bf04815d306e31a934027baf4cf8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaee8bf04815d306e31a934027baf4cf8">trova_minimo</a> (bool *visited, int *dist, int v)</td></tr>
+<tr class="memdesc:aaee8bf04815d306e31a934027baf4cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">trova il nodo meno distante non visitato  <br /></td></tr>
+<tr class="memitem:a0a1209b8f5671a36a050d57353c7eaee" id="r_a0a1209b8f5671a36a050d57353c7eaee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a1209b8f5671a36a050d57353c7eaee">Dijkstra</a> (<a class="el" href="structgrafom.html">grafom</a> *G, int src, int *dist, int *prev)</td></tr>
+<tr class="memdesc:a0a1209b8f5671a36a050d57353c7eaee"><td class="mdescLeft">&#160;</td><td class="mdescRight">trova i cammini minimi da src ad ogni altro nodo  <br /></td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
@@ -131,6 +144,114 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>aggiunge un arco al grafo </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td></td></tr>
+    <tr><td class="paramname">src</td><td></td></tr>
+    <tr><td class="paramname">dest</td><td></td></tr>
+    <tr><td class="paramname">weight</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0a1209b8f5671a36a050d57353c7eaee" name="a0a1209b8f5671a36a050d57353c7eaee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a1209b8f5671a36a050d57353c7eaee">&#9670;&#160;</a></span>Dijkstra()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Dijkstra </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrafom.html">grafom</a> *</td>          <td class="paramname"><span class="paramname"><em>G</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>dist</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>prev</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>trova i cammini minimi da src ad ogni altro nodo </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td></td></tr>
+    <tr><td class="paramname">src</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int* </dd></dl>
+
+</div>
+</div>
+<a id="ad2b9ab0d1502441d0eeaac423d7bfb39" name="ad2b9ab0d1502441d0eeaac423d7bfb39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2b9ab0d1502441d0eeaac423d7bfb39">&#9670;&#160;</a></span>freeGraph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void freeGraph </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrafom.html">grafom</a> *</td>          <td class="paramname"><span class="paramname"><em>G</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af0064c79f70e33b18d88bd4dd0e2c2bd" name="af0064c79f70e33b18d88bd4dd0e2c2bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0064c79f70e33b18d88bd4dd0e2c2bd">&#9670;&#160;</a></span>hasEdge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hasEdge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrafom.html">grafom</a> *</td>          <td class="paramname"><span class="paramname"><em>G</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>verifica l'esistenza di un arco </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td></td></tr>
+    <tr><td class="paramname">src</td><td></td></tr>
+    <tr><td class="paramname">dest</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
 </div>
 </div>
 <a id="af4743c213178ee4805479e04c5e6da6f" name="af4743c213178ee4805479e04c5e6da6f"></a>
@@ -152,6 +273,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>inizializza il grafo </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td></td></tr>
+    <tr><td class="paramname">numNodes</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a5ac2b141d4dec975534610ca7ad771b4" name="a5ac2b141d4dec975534610ca7ad771b4"></a>
@@ -169,6 +299,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>controlla se il grafo è vuoto </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
 </div>
 </div>
 <a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
@@ -185,6 +326,31 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaea88c3a4a99ddd8105f6327004f67ce" name="aaea88c3a4a99ddd8105f6327004f67ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaea88c3a4a99ddd8105f6327004f67ce">&#9670;&#160;</a></span>printGraph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printGraph </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrafom.html">grafom</a> *</td>          <td class="paramname"><span class="paramname"><em>G</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>stampa il grafo </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -211,6 +377,53 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>rimuove un arco dal grafo </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td></td></tr>
+    <tr><td class="paramname">src</td><td></td></tr>
+    <tr><td class="paramname">dest</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaee8bf04815d306e31a934027baf4cf8" name="aaee8bf04815d306e31a934027baf4cf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaee8bf04815d306e31a934027baf4cf8">&#9670;&#160;</a></span>trova_minimo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int trova_minimo </td>
+          <td>(</td>
+          <td class="paramtype">bool *</td>          <td class="paramname"><span class="paramname"><em>visited</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>dist</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>trova il nodo meno distante non visitato </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">visited</td><td></td></tr>
+    <tr><td class="paramname">dist</td><td></td></tr>
+    <tr><td class="paramname">v</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
 </div>
 </div>

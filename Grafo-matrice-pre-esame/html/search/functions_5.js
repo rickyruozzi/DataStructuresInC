@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['printgraph_0',['printGraph',['../grafo_m_8h.html#ad182e6a203a63fdb1b9840ba4319e30d',1,'grafoM.h']]]
+  ['main_0',['main',['../grafo_m_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'grafoM.c']]]
 ];

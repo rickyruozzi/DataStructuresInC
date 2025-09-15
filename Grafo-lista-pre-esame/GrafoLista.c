@@ -142,7 +142,7 @@ int trova_minimo(bool* visited, int* dist, int v){
  * @param src 
  * @return int* 
  */
-void* Djikstra(graph* G, int src, int* dist, int* prev){
+void Dijkstra(graph* G, int src, int* dist, int* prev){
     bool* visited=(bool*)malloc(sizeof(bool)*G->vertex_number);
     for(int i=0; i<G->vertex_number; i++){
         dist[i]=INT_MAX;
