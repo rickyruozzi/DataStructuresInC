@@ -37,7 +37,7 @@ bool isEmpty(grafom* G){
  * @param weight 
  */
 void addEdge(grafom* G, int src, int dest, int weight){
-    if(src>0 && src<G->numNodes &&dest>0 && dest<G->numNodes){
+    if(src>=0 && src<G->numNodes &&dest>=0 && dest<G->numNodes){
         G->matrix[src][dest]=weight;
         G->matrix[dest][src]=weight; 
     }
@@ -51,7 +51,7 @@ void addEdge(grafom* G, int src, int dest, int weight){
  * @param dest 
  */
 void removeEdge(grafom* G, int src, int dest){
-    if(src>0 && src<G->numNodes &&dest>0 && dest<G->numNodes){
+    if(src>=0 && src<G->numNodes &&dest>=0 && dest<G->numNodes){
         G->matrix[src][dest]=0;
         G->matrix[dest][src]=0; 
     }
@@ -67,7 +67,7 @@ void removeEdge(grafom* G, int src, int dest){
  * @return false 
  */
 bool hasEdge(grafom* G, int src, int dest){
-    if(src>0 && src<G->numNodes &&dest>0 && dest<G->numNodes){
+    if(src>=0 && src<G->numNodes &&dest>=0 && dest<G->numNodes){
         return G->matrix[src][dest]!=0;
     }
     return false;
@@ -175,4 +175,42 @@ void bellmanFord(grafom* G, int src, int* prev, int* dist) {
         }
     }
 }
-int main(){}
+int main() {
+    int n = 4;
+    grafom* G = (grafom*)malloc(sizeof(grafom));
+    init(G, n);
+
+    // Aggiungi archi
+    addEdge(G, 0, 1, 7);
+    addEdge(G, 0, 2, 3);
+    addEdge(G, 1, 2, 1);
+    addEdge(G, 1, 3, 4);
+    addEdge(G, 2, 3, 2);
+
+    printf("Matrice di adiacenza:\n");
+    printGraph(G);
+    printf("\n");
+
+    // Test Dijkstra
+    int dist[n], prev[n];
+    Dijkstra(G, 0, dist, prev);
+    printf("Distanze minime da 0 (Dijkstra):\n");
+    for(int i = 0; i < n; i++) {
+        printf("Nodo %d: distanza = %d, predecessore = %d\n", i, dist[i], prev[i]);
+    }
+
+    // Test Bellman-Ford
+    bellmanFord(G, 0, prev, dist);
+    printf("Distanze minime da 0 (Bellman-Ford):\n");
+    for(int i = 0; i < n; i++) {
+        printf("Nodo %d: distanza = %d, predecessore = %d\n", i, dist[i], prev[i]);
+    }
+
+    // Test hasEdge e removeEdge
+    printf("Esiste arco 0-1? %s\n", hasEdge(G, 0, 1) ? "Sì" : "No");
+    removeEdge(G, 0, 1);
+    printf("Dopo rimozione, esiste arco 0-1? %s\n", hasEdge(G, 0, 1) ? "Sì" : "No");
+
+    freeGraph(G);
+    return 0;
+}
