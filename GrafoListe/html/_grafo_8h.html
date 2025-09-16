@@ -94,6 +94,8 @@ $(function(){initNavTree('_grafo_8h.html','',''); });
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;limits.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 </div>
 <p><a href="_grafo_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -129,8 +131,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:ae79741145ab0d848092f932eb0bc0b03"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if the graph is undirected  <br /></td></tr>
 <tr class="memitem:a05e3085f070fd00422e6135fb37239a4" id="r_a05e3085f070fd00422e6135fb37239a4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05e3085f070fd00422e6135fb37239a4">isDirected</a> (<a class="el" href="structgrafo.html">grafo</a> *g)</td></tr>
 <tr class="memdesc:a05e3085f070fd00422e6135fb37239a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if the graph is directed  <br /></td></tr>
-<tr class="memitem:a2bbf262ec7270e66198c530ba17ec5d8" id="r_a2bbf262ec7270e66198c530ba17ec5d8"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bbf262ec7270e66198c530ba17ec5d8">Djikstra</a> (int src, int *dist, int *prev, <a class="el" href="structgrafo.html">grafo</a> *Grafo)</td></tr>
-<tr class="memdesc:a2bbf262ec7270e66198c530ba17ec5d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">calcola le distanza minime  <br /></td></tr>
+<tr class="memitem:a45b153a5d2f612e18ff4097164fae92d" id="r_a45b153a5d2f612e18ff4097164fae92d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45b153a5d2f612e18ff4097164fae92d">Dijkstra</a> (int src, int *dist, int *prev, <a class="el" href="structgrafo.html">grafo</a> *Grafo)</td></tr>
+<tr class="memdesc:a45b153a5d2f612e18ff4097164fae92d"><td class="mdescLeft">&#160;</td><td class="mdescRight">calcola le distanza minime  <br /></td></tr>
+<tr class="memitem:af3457376f07438f47e0da3c50e836bbd" id="r_af3457376f07438f47e0da3c50e836bbd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3457376f07438f47e0da3c50e836bbd">ciclo</a> (<a class="el" href="structgrafo.html">grafo</a> *Grafo, int pre[], int post[], int v, int padre)</td></tr>
+<tr class="memitem:a79bfc84ef8e9b2832b09b13c1ffa979a" id="r_a79bfc84ef8e9b2832b09b13c1ffa979a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79bfc84ef8e9b2832b09b13c1ffa979a">BellmanFord</a> (<a class="el" href="structgrafo.html">grafo</a> *G, int *dist, int *prev, int src)</td></tr>
+<tr class="memdesc:a79bfc84ef8e9b2832b09b13c1ffa979a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bellman Ford per i cammini minimi da src agli altri nodi raggiungibili del grafo.  <br /></td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
 <a id="ada2456d26003912a176eb897662c41a8" name="ada2456d26003912a176eb897662c41a8"></a>
@@ -204,6 +209,84 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a79bfc84ef8e9b2832b09b13c1ffa979a" name="a79bfc84ef8e9b2832b09b13c1ffa979a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79bfc84ef8e9b2832b09b13c1ffa979a">&#9670;&#160;</a></span>BellmanFord()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BellmanFord </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrafo.html">grafo</a> *</td>          <td class="paramname"><span class="paramname"><em>G</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>dist</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>prev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>src</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bellman Ford per i cammini minimi da src agli altri nodi raggiungibili del grafo. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td></td></tr>
+    <tr><td class="paramname">dist</td><td></td></tr>
+    <tr><td class="paramname">prev</td><td></td></tr>
+    <tr><td class="paramname">src</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af3457376f07438f47e0da3c50e836bbd" name="af3457376f07438f47e0da3c50e836bbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3457376f07438f47e0da3c50e836bbd">&#9670;&#160;</a></span>ciclo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ciclo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrafo.html">grafo</a> *</td>          <td class="paramname"><span class="paramname"><em>Grafo</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>pre</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>post</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>padre</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ad6257a631e107864c53961f136f918dc" name="ad6257a631e107864c53961f136f918dc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad6257a631e107864c53961f136f918dc">&#9670;&#160;</a></span>createGraph()</h2>
 
@@ -261,14 +344,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a2bbf262ec7270e66198c530ba17ec5d8" name="a2bbf262ec7270e66198c530ba17ec5d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bbf262ec7270e66198c530ba17ec5d8">&#9670;&#160;</a></span>Djikstra()</h2>
+<a id="a45b153a5d2f612e18ff4097164fae92d" name="a45b153a5d2f612e18ff4097164fae92d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45b153a5d2f612e18ff4097164fae92d">&#9670;&#160;</a></span>Dijkstra()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int * Djikstra </td>
+          <td class="memname">void Dijkstra </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
         </tr>

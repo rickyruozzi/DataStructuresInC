@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <limits.h>
+#include <string.h>
 typedef struct Nodo {
     int vertex;
     int peso;
@@ -23,6 +25,7 @@ bool edgeExist(grafo* g, int src, int dest);
 int weight(grafo* g, int src, int dest);
 bool isUndirected(grafo* g);
 bool isDirected(grafo* g);
-int* Djikstra(int src, int* dist, int* prev, grafo* Grafo);
-
+void Dijkstra(int src, int* dist, int* prev, grafo* Grafo);
+bool ciclo(grafo* Grafo, int pre[], int post[], int v, int padre);
+void BellmanFord(grafo* G, int* dist, int* prev, int src);
 #endif

@@ -226,7 +226,7 @@ int trova_minimo(bool visitato[], int dist[], int V ){
  * @note l'array delle visite serve per evitare eventuali cicli
  * @note trova_minimo serve per trovare il vertice più vicino a quelli già visitati (permette di attuare la logica greedy)
  */
-void Djikstra(int src, int* dist, int* prev, grafo* Grafo){
+void Dijkstra(int src, int* dist, int* prev, grafo* Grafo){
     //inizializzazione
     int vertici= Grafo->vertici;
     bool* visitati = (bool*)malloc(vertici*sizeof(bool));
@@ -253,6 +253,7 @@ void Djikstra(int src, int* dist, int* prev, grafo* Grafo){
             current=current->next;
         }
     }
+    free(visitati);
 }
 int time = 0; 
 /**
@@ -271,23 +272,23 @@ bool cerca_ciclo(grafo* grafo){
         post[i]=0;
     }
     for(int i=0; i<grafo->vertici; i++){
-        if(pre[i]==0 && ciclo(grafo, pre, post, i)){
+        if(pre[i]==0 && ciclo(grafo, pre, post, i, -1)){ // passa -1 come padre iniziale
             return true;
         }
     }
     return false;
 }
 
-bool ciclo(grafo* Grafo, int pre[], int post[], int v){
+bool ciclo(grafo* Grafo, int pre[], int post[], int v, int padre){
     time=time+1;
     pre[v]=time;
     Nodo* testa=Grafo->adjacency_list[v];
     while(testa!=NULL){
         if(pre[testa->vertex]==0){
-            if(ciclo(Grafo, pre, post, testa->vertex)){return true;}
+            if(ciclo(Grafo, pre, post, testa->vertex, v)){return true;}
         }
         else{
-            if(post[testa->vertex]==0){
+            if(post[testa->vertex]==0 && testa->vertex != padre){
                 return true;
             }
         }
@@ -298,15 +299,83 @@ bool ciclo(grafo* Grafo, int pre[], int post[], int v){
     return false;
 }
 
+/**
+ * @brief Bellman Ford per i cammini minimi da src agli altri nodi raggiungibili del grafo
+ * 
+ * @param G 
+ * @param dist 
+ * @param prev 
+ * @param src 
+ */
+void BellmanFord(grafo* G, int* dist, int* prev, int src){
+    int v= G->vertici;
+    for(int i=0; i<v; i++){
+        dist[i]=INT_MAX;
+        prev[i]=-1;
+    }
+    dist[src]=0;
+    for(int i=0; i<v; i++){
+        for(int j=0; j<v; j++){
+            Nodo* current = G->adjacency_list[j];
+            while(current!=NULL){
+                int v=current->vertex;
+                int w=current->peso;
+                if(dist[j]!=INT_MAX && dist[v]>dist[j]+w){
+                    dist[v]=dist[j]+w;
+                    prev[v]=j;
+                }
+                current=current->next;
+            }
+        }
+    }
+    for(int i=0; i<v; i++){
+        Nodo* current=G->adjacency_list[i];
+        while(current!=NULL){
+            int w=current->peso;
+            int v=current->vertex;
+            if(dist[i]+w<dist[v]){
+                printf("Ciclo negativo individuato!");
+                free(dist);
+                return;
+            }
+            current=current->next;
+        }
+    }
+}
+
 int main(){
     grafo* Grafo = loadGraphFromFile("Grafo.txt", true);
     printGraph(Grafo);
-    freeGraph(Grafo);
     if(isUndirected(Grafo)){
         printf("Grafo non diretto");
     }
     else{
         printf("Grafo diretto");
     }
+    int* dist = (int*)malloc(Grafo->vertici*sizeof(int));
+    int* prev = (int*)malloc(Grafo->vertici*sizeof(int));
+    Dijkstra(0, dist, prev, Grafo);
+    printf("\nDistanze minime dal nodo 0:\n");
+    for(int i=0; i<Grafo->vertici; i++){
+        printf("Nodo %d: Distanza = %d, Precedente = %d\n", i, dist[i], prev[i]);
+    }
+    BellmanFord(Grafo, dist, prev, 0);
+    if(cerca_ciclo(Grafo)){
+        printf("Ciclo trovato\n");
+    }
+    else{
+        printf("Nessun ciclo trovato\n");
+    }
+    int* dist2 = (int*)malloc(Grafo->vertici*sizeof(int));
+    int* prev2 = (int*)malloc(Grafo->vertici*sizeof(int));
+    BellmanFord(Grafo, dist2, prev2, 0);
+    for(int i=0; i<Grafo->vertici; i++){
+        printf("Nodo %d: Distanza = %d, Precedente = %d\n", i, dist[i], prev[i]);
+    }
+    free(dist);
+    free(prev);
+    free(dist2);
+    free(prev2);
+    freeGraph(Grafo);
     return 0;
 }

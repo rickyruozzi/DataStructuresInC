@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['time_0',['time',['../_grafo_8c.html#a42715f65f02da52edc5b22021d8ae670',1,'Grafo.c']]],
-  ['trova_5fminimo_1',['trova_minimo',['../_grafo_8c.html#aa61b9567194531e98bea7215d5c6f9c3',1,'Grafo.c']]]
+  ['peso_0',['peso',['../struct_nodo.html#aefc6bfd2c6ef7be1151caf144999b67a',1,'Nodo']]],
+  ['printgraph_1',['printGraph',['../_grafo_8c.html#aa65cfb921a2cd7babec80dcebbedcbec',1,'printGraph(grafo *g):&#160;Grafo.c'],['../_grafo_8h.html#aa65cfb921a2cd7babec80dcebbedcbec',1,'printGraph(grafo *g):&#160;Grafo.c']]]
 ];

@@ -212,7 +212,7 @@ bool searchCycle(graph* G, int* pre, int* post, int v){
  * @param prev 
  * @param src 
  */
-void BellmanFord(graph* G, int* dist[], int* prev, int src){
+void BellmanFord(graph* G, int* dist, int* prev, int src){
     int v= G->vertex_number;
     for(int i=0; i<v; i++){
         dist[i]=INT_MAX;

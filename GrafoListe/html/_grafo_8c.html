@@ -117,11 +117,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:a05e3085f070fd00422e6135fb37239a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if the graph is directed  <br /></td></tr>
 <tr class="memitem:aa61b9567194531e98bea7215d5c6f9c3" id="r_aa61b9567194531e98bea7215d5c6f9c3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa61b9567194531e98bea7215d5c6f9c3">trova_minimo</a> (bool visitato[], int dist[], int V)</td></tr>
 <tr class="memdesc:aa61b9567194531e98bea7215d5c6f9c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">trova il nodo con distanza minima non visitato (così garantamo la logica greedy)  <br /></td></tr>
-<tr class="memitem:a07ef683139a9549302ade1f8fc85d4b1" id="r_a07ef683139a9549302ade1f8fc85d4b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07ef683139a9549302ade1f8fc85d4b1">Djikstra</a> (int src, int *dist, int *prev, <a class="el" href="structgrafo.html">grafo</a> *Grafo)</td></tr>
-<tr class="memdesc:a07ef683139a9549302ade1f8fc85d4b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">calcola le distanza minime  <br /></td></tr>
+<tr class="memitem:a45b153a5d2f612e18ff4097164fae92d" id="r_a45b153a5d2f612e18ff4097164fae92d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45b153a5d2f612e18ff4097164fae92d">Dijkstra</a> (int src, int *dist, int *prev, <a class="el" href="structgrafo.html">grafo</a> *Grafo)</td></tr>
+<tr class="memdesc:a45b153a5d2f612e18ff4097164fae92d"><td class="mdescLeft">&#160;</td><td class="mdescRight">calcola le distanza minime  <br /></td></tr>
 <tr class="memitem:aafb9d0d2a62769e8075497a92fcd1ed9" id="r_aafb9d0d2a62769e8075497a92fcd1ed9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafb9d0d2a62769e8075497a92fcd1ed9">cerca_ciclo</a> (<a class="el" href="structgrafo.html">grafo</a> *<a class="el" href="structgrafo.html">grafo</a>)</td></tr>
 <tr class="memdesc:aafb9d0d2a62769e8075497a92fcd1ed9"><td class="mdescLeft">&#160;</td><td class="mdescRight">permette di cercare un ciclo nel grafo  <br /></td></tr>
-<tr class="memitem:a24fa52d7cd36f10545fa598edc4de838" id="r_a24fa52d7cd36f10545fa598edc4de838"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24fa52d7cd36f10545fa598edc4de838">ciclo</a> (<a class="el" href="structgrafo.html">grafo</a> *Grafo, int pre[], int post[], int v)</td></tr>
+<tr class="memitem:af3457376f07438f47e0da3c50e836bbd" id="r_af3457376f07438f47e0da3c50e836bbd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3457376f07438f47e0da3c50e836bbd">ciclo</a> (<a class="el" href="structgrafo.html">grafo</a> *Grafo, int pre[], int post[], int v, int padre)</td></tr>
+<tr class="memitem:a79bfc84ef8e9b2832b09b13c1ffa979a" id="r_a79bfc84ef8e9b2832b09b13c1ffa979a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79bfc84ef8e9b2832b09b13c1ffa979a">BellmanFord</a> (<a class="el" href="structgrafo.html">grafo</a> *G, int *dist, int *prev, int src)</td></tr>
+<tr class="memdesc:a79bfc84ef8e9b2832b09b13c1ffa979a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bellman Ford per i cammini minimi da src agli altri nodi raggiungibili del grafo.  <br /></td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
@@ -171,6 +173,48 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a79bfc84ef8e9b2832b09b13c1ffa979a" name="a79bfc84ef8e9b2832b09b13c1ffa979a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79bfc84ef8e9b2832b09b13c1ffa979a">&#9670;&#160;</a></span>BellmanFord()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BellmanFord </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrafo.html">grafo</a> *</td>          <td class="paramname"><span class="paramname"><em>G</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>dist</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>prev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>src</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bellman Ford per i cammini minimi da src agli altri nodi raggiungibili del grafo. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">G</td><td></td></tr>
+    <tr><td class="paramname">dist</td><td></td></tr>
+    <tr><td class="paramname">prev</td><td></td></tr>
+    <tr><td class="paramname">src</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aafb9d0d2a62769e8075497a92fcd1ed9" name="aafb9d0d2a62769e8075497a92fcd1ed9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aafb9d0d2a62769e8075497a92fcd1ed9">&#9670;&#160;</a></span>cerca_ciclo()</h2>
 
@@ -199,8 +243,8 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a24fa52d7cd36f10545fa598edc4de838" name="a24fa52d7cd36f10545fa598edc4de838"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24fa52d7cd36f10545fa598edc4de838">&#9670;&#160;</a></span>ciclo()</h2>
+<a id="af3457376f07438f47e0da3c50e836bbd" name="af3457376f07438f47e0da3c50e836bbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3457376f07438f47e0da3c50e836bbd">&#9670;&#160;</a></span>ciclo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -223,7 +267,12 @@ false </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>padre</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -287,14 +336,14 @@ false </dd></dl>
 
 </div>
 </div>
-<a id="a07ef683139a9549302ade1f8fc85d4b1" name="a07ef683139a9549302ade1f8fc85d4b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07ef683139a9549302ade1f8fc85d4b1">&#9670;&#160;</a></span>Djikstra()</h2>
+<a id="a45b153a5d2f612e18ff4097164fae92d" name="a45b153a5d2f612e18ff4097164fae92d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45b153a5d2f612e18ff4097164fae92d">&#9670;&#160;</a></span>Dijkstra()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Djikstra </td>
+          <td class="memname">void Dijkstra </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
         </tr>
